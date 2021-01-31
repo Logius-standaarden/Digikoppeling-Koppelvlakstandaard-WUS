@@ -1,5 +1,5 @@
 var respecConfig = {
-  // this template doesn''t use all possible config parameters
+  // this template doesn't use all possible config parameters
   // see https://respec.org/docs/ for alle 
 
   // specStatus currently supported
@@ -11,7 +11,7 @@ var respecConfig = {
   // TG: Versie teruggetrokken
   // BASIS, GN-BASIS: 'geen status'
 
-  specStatus: "WV",
+  specStatus: "DEF",
   // SpecType currently supported
   // NO: "Norm"
   // ST: "Standaard"
@@ -22,21 +22,21 @@ var respecConfig = {
   // AL: "Algemeen"
   // BD: "Beheerdocumentatie"
   // BP: "Best Practice"
-  specType: "HR",
+  specType: "ST",
 
   // subtitle will be shown below title, can be omitted 
-  subtitle: "Hier komt een subtitle",
+  //subtitle: "Hier komt een subtitle",
 
   // The specification's "short name", which is the name used in NL_Respec URLs
-  shortName: "API-Design-Rules",
+  shortName: "digikoppeling",
 
   // A YYYY-MM-DD date. The publication date of the present document. 
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
   // Belangrijk: als publishDate niet opgegeven is, wordt bij de link "Laatst gepubliceerde versie" "geen" gezet. Anders wordt een link opgebouwd voor de laatste versie, met het formaat:
-  publishDate: "2021-01-31",
+  publishDate: "2020-10-06",
 
   // A YYYY-MM-DD date. When there is a previous release of a given specification, (W3C)
-  previousPublishDate: "2021-01-31",
+  previousPublishDate: "2018-10-23",
 
   // Zie https://github.com/w3c/respec/wiki/previousMaturity. Dit moet een
   // A YYYY-MM-DD date. When a previousPublishDate is specified, this is typically required as well in order to generate the "Previous Version"
@@ -73,7 +73,7 @@ var respecConfig = {
   }
   ],
   // The github option allows you associate your specification with a repository on GitHub.
-  github: "https://github.com/Logius-standaarden/Template-Repository",
+  github: "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS",
 
   // The URL of your test suite, gets included in the specification's headers.
   // testSuiteURI: "https://portaal.digikoppeling.nl/CV/home.html",
@@ -122,9 +122,9 @@ var respecConfig = {
   // thi scan be configured below
   // if not set, the url's will be generated on the respecConfig.github automatically  
   nl_github: {
-    issueBase: "https://github.com/Geonovum/KP-APIs/issues",
-    revision: "https://github.com/Logius-standaarden/API-Design-Rules/commits",
-    pullrequests: "https://github.com/Logius-standaarden/API-Design-Rules/pulls"
+    //issueBase: "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/issues",
+    revision: "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/commits",
+    //pullrequests: "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/pulls"
   },
 
   // nl_organisationName is used for some company specific values in the header (and Sotd)
@@ -137,7 +137,7 @@ var respecConfig = {
 
   // class style can be automatically insertd in generated markdown tables
   // currently defaults to simple, but this may change    
-  nl_markdownTableClass: "simple",
+  nl_markdownTableClass: "dkkvs",
 
   // if nl_markdownEmbedImageInFigure is set to true images in markdown generated content will be surrounded with <figures> element
   // so that figures can be linked are be a part of table of figures
@@ -212,6 +212,21 @@ var respecConfig = {
       title: "Toegetreden vertrouwensdienstverleners",
       publisher: "Logius",
     },
+    "PKIoverheid Certificaten": {
+      href: "https://cert.pkioverheid.nl/",
+      title: "Pkioverheid certificaten",
+      publisher: "Logius"
+    },
+    "Logius website": {
+      href: "https://logius.nl/digikoppeling",
+      title: "Logius Digikoppeling",
+      publisher: "Logius",
+    },
+    "Digikoppeling Compliance Voorziening": {
+      href: "https://portaal.digikoppeling.nl",
+      title: "Digikoppeling Compliance Voorziening",
+      publisher: "Logius",
+    }
 
   }
 };
