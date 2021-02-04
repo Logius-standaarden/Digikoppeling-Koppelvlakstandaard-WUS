@@ -28,7 +28,7 @@ var respecConfig = {
   //subtitle: "Hier komt een subtitle",
 
   // The specification's "short name", which is the name used in NL_Respec URLs
-  shortName: "digikoppeling",
+  shortName: "wus",
 
   // A YYYY-MM-DD date. The publication date of the present document. 
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
@@ -36,7 +36,7 @@ var respecConfig = {
   publishDate: "2020-10-06",
 
   // A YYYY-MM-DD date. When there is a previous release of a given specification, (W3C)
-  previousPublishDate: "2018-10-23",
+  //previousPublishDate: "2018-10-23",
 
   // Zie https://github.com/w3c/respec/wiki/previousMaturity. Dit moet een
   // A YYYY-MM-DD date. When a previousPublishDate is specified, this is typically required as well in order to generate the "Previous Version"
@@ -109,7 +109,9 @@ var respecConfig = {
 
   // The specification's publish domain, which is used to publish the specification
   // the url in the header thisVersion is generated like `<conf.nl_organisationPublishURL>/<conf.pubDomain>/<specStatus>-<specType.toLowerCase()>-<conf.shortName>}-conf.publishDate>/`
-  pubDomain: "adr",
+  pubDomain: "dk",
+  pubSubDomain: "wus",
+
 
   // For Consultatieversies (specStatus="GN-CV") there is a default text in the section "Status of this document" that contains an emailaddress for feedback and comments on the document.
   nl_emailComments: "digikoppeling@logius.nl",
@@ -225,6 +227,11 @@ var respecConfig = {
     "Digikoppeling Compliance Voorziening": {
       href: "https://portaal.digikoppeling.nl",
       title: "Digikoppeling Compliance Voorziening",
+      publisher: "Logius",
+    },
+    "WUS voorbeelden": {
+      href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      title: "Digikoppeling WUS voorbeelden (zip)",
       publisher: "Logius",
     }
 
