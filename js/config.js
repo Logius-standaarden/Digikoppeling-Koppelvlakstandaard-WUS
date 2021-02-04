@@ -115,9 +115,13 @@ var respecConfig = {
 
   // For Consultatieversies (specStatus="GN-CV") there is a default text in the section "Status of this document" that contains an emailaddress for feedback and comments on the document.
   nl_emailComments: "digikoppeling@logius.nl",
+  // this parameter will add the tag_name of the latest release to the document Title
+  // only set this parameter when a release has been set
 
+  nl_addReleaseTagTitle: true,
   // if you use a single document for your spec, which uses more than one markdown H1 header, e.g. '# inleiding'
   // this configuration can be set to make sure that the alle H1 headers and navigation bars are preserved
+  
   nl_markdownSplitH1sections: false,
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
