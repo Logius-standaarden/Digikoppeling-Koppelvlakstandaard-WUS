@@ -27,6 +27,9 @@ var respecConfig = {
   // subtitle will be shown below title, can be omitted 
   //subtitle: "Hier komt een subtitle",
 
+  // The specification's publish domain, which is used to publish the specification
+  // the url in the header thisVersion is generated like `<conf.nl_organisationPublishURL>/<conf.pubDomain>/<specStatus>-<specType.toLowerCase()>-<conf.shortName>}-conf.publishDate>/`
+  pubDomain: "dk",
   // The specification's "short name", which is the name used in NL_Respec URLs
   shortName: "wus",
 
@@ -37,6 +40,9 @@ var respecConfig = {
 
   // A YYYY-MM-DD date. When there is a previous release of a given specification, (W3C)
   //previousPublishDate: "2018-10-23",
+
+  publishVersion: "3.8",
+  // previousPublishVersion: "3.7",
 
   // Zie https://github.com/w3c/respec/wiki/previousMaturity. Dit moet een
   // A YYYY-MM-DD date. When a previousPublishDate is specified, this is typically required as well in order to generate the "Previous Version"
@@ -60,15 +66,14 @@ var respecConfig = {
   },
   {
     name: "Pieter Hering",
-    mailto: "api@digikoppeling.nl",
-    company: "Logius",
-    companyURL: "https://logius.nl/standaarden",
+    url: "https://logius.nl/standaarden",
   }
   ],
   // An array of person objects describing the authors of the document
   // this can be simple or more elaborated
   authors: [{
-    name: "Pieter Hering",
+    name: "Logius",
+    mailto: "digikoppeling@logius.nl",
     url: "https://logius.nl/standaarden",
   }
   ],
@@ -101,18 +106,12 @@ var respecConfig = {
   //   },
   // ],
 
-  // You can use markdown to write ReSpec based documents.
-  // format: "markdown",
-  // TODO  Do not suse this config, it may cause a problem., use instead:
-  // <section data-format="markdown" data-include="<filename>.md"></section>
-
-
-  // The specification's publish domain, which is used to publish the specification
-  // the url in the header thisVersion is generated like `<conf.nl_organisationPublishURL>/<conf.pubDomain>/<specStatus>-<specType.toLowerCase()>-<conf.shortName>}-conf.publishDate>/`
-  pubDomain: "dk",
-  pubSubDomain: "wus",
-
-
+  alternateFormats: [
+    {
+      label: "pdf",
+      uri: "Digikoppeling-Koppelvlakstandaard-WUS.pdf",
+    },
+  ],
   // For Consultatieversies (specStatus="GN-CV") there is a default text in the section "Status of this document" that contains an emailaddress for feedback and comments on the document.
   nl_emailComments: "digikoppeling@logius.nl",
   // this parameter will add the tag_name of the latest release to the document Title
@@ -121,7 +120,7 @@ var respecConfig = {
   nl_addReleaseTagTitle: true,
   // if you use a single document for your spec, which uses more than one markdown H1 header, e.g. '# inleiding'
   // this configuration can be set to make sure that the alle H1 headers and navigation bars are preserved
-  
+
   nl_markdownSplitH1sections: false,
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
