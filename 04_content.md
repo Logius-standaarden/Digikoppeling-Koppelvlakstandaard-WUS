@@ -106,7 +106,7 @@ verder aangevuld met “Best Practices” en adviezen, beschreven in een apart
 document. Alle documentatie over Digikoppeling is te vinden op de [Logius
 website](http://www.logius.nl/digikoppeling).
 
-WSDL
+### WSDL
 
 Een webservice wordt deels formeel en automatisch verwerkbaar gedefinieerd
 (beschrijving – description) door een WSDL. Deze WSDL geeft een beschrijving van
@@ -117,7 +117,7 @@ webservice communiceert feitelijk door middel van SOAP berichten, die
 gegenereerd worden op basis van de WSDL. Adressering en naamgeving zijn
 specifieke aandachtsgebieden.
 
-Resulterende berichtheaders
+### Resulterende berichtheaders
 
 Deze standaard beschrijft per definitie aan welke eisen een Digikoppeling WUS
 implementatie moet voldoen. De praktijk leert dat dergelijke eisen vaak erg
@@ -135,13 +135,13 @@ beveiliging en betrouwbaarheid en is daarmee een “profiel” voor WUS.
 Elke uitwisseling op basis van de WUS-protocollen over Digikoppeling zal moeten
 voldoen aan één of een combinatie van de volgende Digikoppeling WUS-varianten:
 
-- **Best Effort**: dit zijn synchrone uitwisselingen die geen faciliteiten
+- __Best Effort:__ dit zijn synchrone uitwisselingen die geen faciliteiten
     voor betrouwbaarheid (ontvangstbevestigingen, duplicaateliminatie etc.)
     vereisen. Voorbeelden zijn toepassingen waar het eventueel verloren raken
     van sommige berichten niet problematisch is en waar snelle verwerking
     gewenst is.
 
-- **End-to-End** **Security**: een bericht wordt beveiligd tussen de
+- __End-to-End Security:__ een bericht wordt beveiligd tussen de
     uiteindelijke consumer en de uiteindelijke provider, ook wanneer er zich
     intermediairs bevinden in het pad tussen die twee. Het betreft hier
     authenticatie van de consumerorganisatie, conform het Digikoppeling
@@ -150,7 +150,7 @@ voldoen aan één of een combinatie van de volgende Digikoppeling WUS-varianten:
     attachments) onderweg. Voor de authenticatie en encryptie wordt
     gebruikgemaakt van WS-Security.
 
-- Attachments: één of meerdere bijlagen, naast natuurlijk het reeds bestaande
+- __Attachments:__ één of meerdere bijlagen, naast natuurlijk het reeds bestaande
     (xml) bericht zelf. Dit kan, maar hoeft niet, toegepast te worden in
     combinatie de bovengenoemde profielen: het is dus optioneel.
 
@@ -177,7 +177,7 @@ op transportniveau (HTTPS).
 | End-to-End Security | Best Effort – Signed    | Digikoppeling 2W-be-S   | √ | √ | ― | Optional |
 | | Best Effort – Encrypted | Digikoppeling 2W-be-SE  | √ | √ | √ | Optional |
 
-Compliancevoorzieningen
+## Compliancevoorzieningen
 
 Voor de Digikoppeling Koppelvlakstandaard WUS is een compliancevoorzieningen
 beschikbaar gesteld, waarmee een ontwikkelaar of beheerder kan testen “of het
@@ -545,7 +545,7 @@ Point-to-Point en End-to-End beveiliging wordt ondersteund. Point-to-Point
 beveiliging wordt uitgevoerd op basis van TLS, End-to-End beveiliging op basis
 van WS-Security.
 
-Point-to-Point beveiliging
+#### Point-to-Point beveiliging
 
 Deze beveiliging zorgt ervoor dat het volledige bericht en het http-protocol is
 beveiligd tijdens het transport van verzender naar ontvanger. Alle Digikoppeling
@@ -566,7 +566,7 @@ voorschriften:
 | WT007 | Binnen een TLS-sessie kunnen meerdere berichten verstuurd worden. |
 | WT008 | Voor de TLS-sessie moet een maximale duur gelden, na het verloop hiervan wordt de verbinding verbroken. Partijen zijn vrij om de maximale duur zelf te bepalen. |
 
-End-to-End beveiliging.
+#### End-to-End beveiliging
 
 Deze beveiliging is optioneel en wordt bovenop point-to-point beveiliging
 ingezet op SOAP niveau met behulp van ondertekening en versleuteling. End-to-End
@@ -578,7 +578,7 @@ onweerlegbaarheid van belang is.
 |---|---|
 | WB001 | Toepassen WS-Security 1.0 en WS-Security 1.1 | 
 | | Overwegingen: Basic Security Profile 1.1 is sinds 2010 november final geworden. Hierin worden zowel de WS-Security 1.0 als de WS-Security 1.1 namespaces beide gebruikt. |
-| WB002 | Toepassen van Timestamp in security header met Timestamp Created is verplicht. Timestamp Expires is optioneel.<br>**Timestamp Created** Verplicht onderdeel van een Timestamp.<br> **Timestamp Expires** Optioneel onderdeel van een Timestamp. <br> **Timestamp tijd**<br> De tijdstamp moet een Universal Time Coordinated (UTC) tijdzone aanduiding hebben. Bij het toepassen van een timestamp gaat tijdsynchronisatie van de verschillende communicerende systemen een rol spelen. Indien dit niet mogelijk is moet hiermee met de vulling van de Created en Expires rekening worden gehouden door middel van een “timestampSkew“. | 
+| WB002 | Toepassen van Timestamp in security header met Timestamp Created is verplicht. Timestamp Expires is optioneel.<br>De tijdstamp moet een Universal Time Coordinated (UTC) tijdzone aanduiding hebben. Bij het toepassen van een timestamp gaat tijdsynchronisatie van de verschillende communicerende systemen een rol spelen. Indien dit niet mogelijk is moet hiermee met de vulling van de Created en Expires rekening worden gehouden door middel van een “timestampSkew“. | 
 | | Overwegingen: Bij toepassen van Timestamp Expires is tijdsynchronisatie van belang. Om mogelijke problemen hiermee te voorkomen, zou er overwogen kunnen worden om een eis op te nemen dat de Expires niet in Timestamp opgenomen mag worden. Omdat het expliciet weglaten van de Expires niet in alle tooling mogelijk is, wordt hiervoor niet gekozen. Tevens kan het zijn dat door het ontbreken van tijdsynchronisatie er problemen zijn met de Timestamp Created, in de situatie waarbij de ontvanger heeft vastgesteld dat de Timestamp Created in de toekomst ligt. Hiervoor biedt tooling vaak een “timestampSkew”. Deze geeft de toegestane afwijking ten opzichte van UTC aan.  |
 | WB003 | Indien WS-Security wordt toegepast, is ondertekenen verplicht en versleutelen optioneel (keuze profiel Digikoppeling 2W-be-S, Digikoppeling 2W-be-SE,). |
 | | Overwegingen: De berichten kunnen zowel ondertekend als versleuteld worden. Gezien het doel van WS-Security, te weten het “door een intermediair heen” kunnen doorgeven van authenticatie-informatie, is ondertekenen primair van belang; daarmee is ook onweerlegbaarheid geregeld. Uiteraard kan het in een bepaalde situatie ook een eis zijn dat het bericht niet leesbaar is voor de intermediair. | 
@@ -706,55 +706,46 @@ in de volgende paragrafen in meer detail beschreven. In set [WUS voorbeelden]
 zijn voorbeeld berichten opgenomen voor de drie profielen. Deze bieden een
 duidelijk inzicht hoe de berichten uiteindelijk eruit komen te zien.
 
-## WUS Profiel Digikoppeling 2W-be 
+## WUS Profiel Digikoppeling 2W-be
 
-Beveiliging
-
+### Beveiliging
 Dit profiel maakt voor de beveiliging alleen gebruik van tweezijdig TLS.
 
-Headerblocks
-
+### Headerblocks
 Alleen de verplichte WS-Addressing headers zijn hier van toepassing (zie
 soapenv:Header in [[?WUS voorbeelden]]).
 
-MTOM
-
+### MTOM
 De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [WUS
 voorbeelden].
 
 ## WUS Profiel Digikoppeling 2W-be-S 
 
-Beveiliging
-
+### Beveiliging
 Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend zoals vermeld in hoofdstuk 2, paragraaf
 End-to-End beveiliging.
 
-Headerblocks
-
+### Headerblocks
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing (zie [WUS voorbeelden]).
 
-MTOM
-
+### MTOM
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling 2W-be-S
 worden weergegeven in [WUS voorbeelden].
 
-## WUS Profiel Digikoppeling 2W-be-SE 
+## WUS Profiel Digikoppeling 2W-be-SE
 
-Beveiliging
-
+### Beveiliging
 Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend en versleuteld zoals vermeld in
 hoofdstuk 2, paragraaf End-to-End beveiliging.
 
-Headerblocks
-
+### Headerblocks
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing. Ook wordt hierbij de payload van het
 bericht versleuteld (xenc:EncryptedData) (zie [WUS voorbeelden]).
 
-MTOM
-
+### MTOM
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling
 2W-be-SE worden weergegeven in [WUS voorbeelden].
