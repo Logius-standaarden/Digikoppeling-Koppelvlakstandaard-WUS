@@ -698,7 +698,7 @@ set [WUS voorbeelden] en beschikbaar op de [[?Logius website]].
 Ten aanzien van beveiliging maken alle profielen gebruik van tweezijdig TLS, zie
 hoofdstuk 2 paragraaf “Point-to-Point beveiliging”.
 
-![Digikoppeling WUS profielen](media/wus_profielen_digikoppeling.png "Schematische weergave Digikoppeling WUS profielen")
+![Digikoppeling WUS profielen bevinden zich in de logistieke laag dat via een SOAP processor verbonden is met de applicatielaag.](media/wus_profielen_digikoppeling.png "Schematische weergave Digikoppeling WUS profielen")
 
 In het bovenstaande figuur wordt schematisch weergegeven welke WUS profielen
 Digikoppeling biedt en wat de algemene verschillen zijn. Alle profielen worden
