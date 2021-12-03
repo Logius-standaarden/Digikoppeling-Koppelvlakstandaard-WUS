@@ -1,36 +1,157 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.4.0">
+<meta name="generator" content="ReSpec Developer Edition">
 <style>
-span.example-title{text-transform:none}
-aside.example,div.example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
-div.illegal-example{color:red}
-div.illegal-example p{color:#000}
-aside.example,div.example{padding:.5em;border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
-aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
-aside.example div.example span.example-title{color:#999}
-.example pre{background-color:rgba(0,0,0,.03)}
+
+span.example-title {
+  text-transform: none;
+}
+
+:is(aside,div).example,
+div.illegal-example {
+  padding: 0.5em;
+  margin: 1em 0;
+  position: relative;
+  clear: both;
+}
+
+div.illegal-example {
+  color: red;
+}
+
+div.illegal-example p {
+  color: black;
+}
+
+:is(aside,div).example {
+  border-left-width: 0.5em;
+  border-left-style: solid;
+  border-color: #e0cb52;
+  background: #fcfaee;
+}
+
+aside.example div.example {
+  border-left-width: 0.1em;
+  border-color: #999;
+  background: #fff;
+}
+
+
+.example pre {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 </style>
 <style>
-dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
-.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
-.dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
-.dfn-panel>div{display:flex}
-.dfn-panel a.self-link{font-weight:700;margin-right:auto}
-.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
-.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
-.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
-.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
-.dfn-panel a[href]:hover{border-bottom-width:1px}
-.dfn-panel ul{padding:0}
-.dfn-panel li{margin-left:1em}
-.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+
+dfn {
+  cursor: pointer;
+}
+
+.dfn-panel {
+  position: absolute;
+  z-index: 35;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 0.5em 0.75em;
+  margin-top: 0.6em;
+  font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+  background: #fff;
+  color: black;
+  box-shadow: 0 1em 3em -0.4em rgba(0, 0, 0, 0.3),
+    0 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+/* Triangle/caret */
+.dfn-panel:not(.docked) > .caret {
+  position: absolute;
+  top: -9px;
+}
+.dfn-panel:not(.docked) > .caret::before,
+.dfn-panel:not(.docked) > .caret::after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 0;
+  border-bottom: 10px solid #fff;
+  top: 0;
+}
+.dfn-panel:not(.docked) > .caret::before {
+  border-bottom: 9px solid #a2a9b1;
+}
+
+.dfn-panel * {
+  margin: 0;
+}
+
+.dfn-panel b {
+  display: block;
+  color: #000;
+  margin-top: 0.25em;
+}
+
+.dfn-panel ul a[href] {
+  color: #333;
+}
+
+.dfn-panel > div {
+  display: flex;
+}
+
+.dfn-panel a.self-link {
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.dfn-panel .marker {
+  padding: 0.1em;
+  margin-left: 0.5em;
+  border-radius: 0.2em;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 90%;
+  color: #040b1c;
+}
+
+.dfn-panel .marker.dfn-exported {
+  background: #d1edfd;
+  box-shadow: 0 0 0 0.125em #1ca5f940;
+}
+.dfn-panel .marker.idl-block {
+  background: #8ccbf2;
+  box-shadow: 0 0 0 0.125em #0670b161;
+}
+
+.dfn-panel a:not(:hover) {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.dfn-panel a[href]:hover {
+  border-bottom-width: 1px;
+}
+
+.dfn-panel ul {
+  padding: 0;
+}
+
+.dfn-panel li {
+  margin-left: 1em;
+}
+
+.dfn-panel.docked {
+  position: fixed;
+  left: 0.5em;
+  top: unset;
+  bottom: 2em;
+  margin: 0 auto;
+  /* 0.75em from padding (x2), 0.5em from left position, 0.2em border (x2) */
+  max-width: calc(100vw - 0.75em * 2 - 0.5em - 0.2em * 2);
+  max-height: 30vh;
+  overflow: auto;
+}
+
 </style>
   
   
@@ -46,63 +167,267 @@ dfn{cursor:pointer}
 <link rel="stylesheet" type="text/css" href="./media/style.css">
 
 <style id="respec-mainstyle">
-@keyframes pop{
-0%{transform:scale(1,1)}
-25%{transform:scale(1.25,1.25);opacity:.75}
-100%{transform:scale(1,1)}
+
+@keyframes pop {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.25, 1.25);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
-.hljs{background:0 0!important}
-a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
-dfn{font-weight:700}
-a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
-a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
-a.bibref{text-decoration:none}
-.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
-.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
-@supports not (text-decoration:red wavy underline){
-.respec-offending-element:not(pre){display:inline-block}
-.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+
+/* --- INLINES --- */
+:is(h1, h2, h3, h4, h5, h6, a) abbr {
+  border: none;
 }
-#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
-a[href].orcid{padding-left:4px;padding-right:4px}
-a[href].orcid>svg{margin-bottom:-2px}
-.toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
-ol.tof,ul.tof{list-style:none outside none}
-.caption{margin-top:.5em;font-style:italic}
-table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
-.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
-.simple th a{color:#fff;padding:3px 5px;text-align:left}
-.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
-.simple td{padding:3px 10px;border-top:1px solid #ddd}
-.simple tr:nth-child(even){background:#f0f6ff}
-.section dd>p:first-child{margin-top:0}
-.section dd>p:last-child{margin-bottom:0}
-.section dd{margin-bottom:1em}
-.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
-#issue-summary>ul{column-count:2}
-#issue-summary li{list-style:none;display:inline-block}
-details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
-details.respec-tests-details>*{padding-right:2em}
-details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
-details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
-details.respec-tests-details>ul{width:100%;margin-top:-.3em}
-details.respec-tests-details>li{padding-left:1em}
-a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
-h2,h3,h4,h5,h6{position:relative}
-aside.example .marker>a.self-link{color:inherit}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
-h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
-@media (max-width:767px){
-dd{margin-left:0}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
+
+dfn {
+  font-weight: bold;
 }
-@media print{
-.removeOnSave{display:none}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
 }
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+.respec-offending-element:target {
+  animation: pop 0.25s ease-in-out 0s 1;
+}
+
+.respec-offending-element,
+a[href].respec-offending-element {
+  text-decoration: red wavy underline;
+}
+@supports not (text-decoration: red wavy underline) {
+  .respec-offending-element:not(pre) {
+    display: inline-block;
+  }
+  .respec-offending-element {
+    /* Red squiggly line */
+    background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+      bottom repeat-x;
+  }
+}
+
+#references :target {
+  background: #eaf3ff;
+  animation: pop 0.4s ease-in-out 0s 1;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c63501;
+}
+
+th code {
+  color: inherit;
+}
+
+a[href].orcid {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+a[href].orcid > svg {
+  margin-bottom: -2px;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th a {
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd > p:first-child {
+  margin-top: 0;
+}
+
+.section dd > p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary > ul {
+  column-count: 2;
+}
+
+#issue-summary li {
+  list-style: none;
+  display: inline-block;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details > * {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: 0.3em;
+  background-color: white;
+  padding-bottom: 0.5em;
+}
+
+details.respec-tests-details[open] > summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details > ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details > li {
+  padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+:is(h2, h3, h4, h5, h6) > a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: 0.5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity 0.2s;
+  width: 2em;
+}
+
+:is(h2, h3, h4, h5, h6) > a.self-link::before{
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  :is(h2, h3, h4, h5, h6) > a.self-link {
+    left: auto;
+    top: auto;
+  }
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+
 </style>
 <meta name="description" content="Dit document beschrijft de functionele specificaties voor de Digikoppeling
     koppelvlak standaard WUS">
@@ -160,7 +485,7 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
     {
       "type": "Person",
       "name": "Logius",
-      "url": "https://logius.nl/standaarden",
+      "url": "mailto:digikoppeling@logius.nl",
       "foaf:mbox": "digikoppeling@logius.nl"
     }
   ],
@@ -265,18 +590,134 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
   ]
 }</script>
 <style>
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
-.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
-.hljs-literal{color:#0b76c5}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
-.hljs-emphasis{font-style:italic}
-.hljs-strong{font-weight:700}
-.hljs-link{text-decoration:underline}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #717277;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #ca4706;
+  font-weight: bold;
+}
+
+.hljs-literal {
+  color: #0b76c5;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #42803c;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #9a6a01;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #336ae3;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+<style>
+
+var {
+  position: relative;
+  cursor: pointer;
+}
+
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+  text-indent: 0;
+  font-weight: normal;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
+
 </style>
 <script id="initialUserConfig" type="application/json">{
   "specStatus": "DEF",
@@ -301,7 +742,7 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
     {
       "name": "Logius",
       "mailto": "digikoppeling@logius.nl",
-      "url": "https://logius.nl/standaarden"
+      "url": "mailto:digikoppeling@logius.nl"
     }
   ],
   "github": "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS",
@@ -317,7 +758,7 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
   "nl_addReleaseTagTitle": true,
   "nl_markdownSplitH1sections": false,
   "nl_github": {
-    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/commits"
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/commits/"
   },
   "nl_organisationName": "Logius",
   "nl_organisationPrefix": "LS-",
@@ -418,7 +859,8 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-DEF.css"></head>
 
 <body class="h-entry"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img id="Logius" alt="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44" height="77"></a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard WUS 3.8</h1>
+    <a class="logo" href="https://www.logius.nl/standaarden"><img crossorigin="" alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard WUS 3.8</h1>
     
     <h2>
       Logius Standaard<br>
@@ -438,15 +880,21 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
       
       
       <dt>Redacteurs:</dt>
-      <dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a></dd><dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a></dd>
+      <dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a>
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a>
+  </dd>
       
-      <dt>Auteur:</dt><dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:digikoppeling@logius.nl">Logius</a></dd>
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:digikoppeling@logius.nl">Logius</a>
+  </dd>
       <dt>Doe mee:</dt><dd>
     <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/">GitHub Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS</a>
   </dd><dd>
     <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/issues/">Dien een melding in</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/commits/gh-pages">Revisiehistorie</a>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/commits/">Revisiehistorie</a>
   </dd><dd>
     <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/pulls/">Pull requests</a>
   </dd>
@@ -463,7 +911,7 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling
+  <section id="abstract" class="introductory"><h2 id="samenvatting"><a class="self-link" href="#abstract" aria-label="Permalink for Section"></a>Samenvatting</h2><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling
     koppelvlak standaard WUS</p>
 
 <p>Het document is bestemd voor architecten en ontwikkelaars die op basis van WUS
@@ -476,10 +924,7 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
     Het document is bestemd voor architecten en ontwikkelaars die op basis van WUS
     gegevens willen uitwisselen via Digikoppeling. Het gaat hierbij om zowel service
     providers als service requesters (clients).</p></section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>
-    Dit is de definitieve versie van de  standaard. Wijzigingen naar
-    aanleiding van consultaties zijn doorgevoerd.
-  </p><p>Het OBDO heeft op advies van het Forum Standaardisatie deze versie vastgesteld.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-koppelvlakstandaard"><bdi class="secno">1.3 </bdi>Koppelvlak &amp; koppelvlakstandaard</a></li><li class="tocline"><a class="tocxref" href="#opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document</a></li><li class="tocline"><a class="tocxref" href="#koppelvlakstandaard-wus"><bdi class="secno">1.5 </bdi>Koppelvlakstandaard WUS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">1.5.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#ondersteunde-varianten"><bdi class="secno">1.5.2 </bdi>Ondersteunde varianten</a></li><li class="tocline"><a class="tocxref" href="#gehanteerde-standaarden"><bdi class="secno">1.5.3 </bdi>Gehanteerde standaarden</a></li><li class="tocline"><a class="tocxref" href="#voorschriften"><bdi class="secno">1.5.4 </bdi>Voorschriften</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service-definitie-wsdl"><bdi class="secno">1.5.4.1 </bdi>Service definitie WSDL</a></li><li class="tocline"><a class="tocxref" href="#ws-addressing"><bdi class="secno">1.5.4.2 </bdi>WS-Addressing</a></li><li class="tocline"><a class="tocxref" href="#binaire-data"><bdi class="secno">1.5.4.3 </bdi>Binaire Data</a></li><li class="tocline"><a class="tocxref" href="#beveiliging"><bdi class="secno">1.5.4.4 </bdi>Beveiliging</a></li><li class="tocline"><a class="tocxref" href="#naamgeving-namespaces"><bdi class="secno">1.5.4.5 </bdi>Naamgeving, namespaces</a></li></ol></li><li class="tocline"><a class="tocxref" href="#foutafhandeling"><bdi class="secno">1.5.5 </bdi>Foutafhandeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-profielen-wus"><bdi class="secno">1.6 </bdi>Digikoppeling profielen WUS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wus-profiel-digikoppeling-2w-be"><bdi class="secno">1.6.1 </bdi>WUS Profiel Digikoppeling 2W-be</a></li><li class="tocline"><a class="tocxref" href="#wus-profiel-digikoppeling-2w-be-s"><bdi class="secno">1.6.2 </bdi>WUS Profiel Digikoppeling 2W-be-S</a></li><li class="tocline"><a class="tocxref" href="#wus-profiel-digikoppeling-2w-be-se"><bdi class="secno">1.6.3 </bdi>WUS Profiel Digikoppeling 2W-be-SE</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">3. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2 id="status-van-dit-document"><a class="self-link" href="#sotd" aria-label="Permalink for Section"></a>Status van dit document</h2>Dit is de definitieve versie van de  standaard. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p>Het OBDO heeft op advies van het Forum Standaardisatie deze versie vastgesteld.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-koppelvlakstandaard"><bdi class="secno">1.3 </bdi>Koppelvlak &amp; koppelvlakstandaard</a></li><li class="tocline"><a class="tocxref" href="#opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document</a></li><li class="tocline"><a class="tocxref" href="#koppelvlakstandaard-wus"><bdi class="secno">1.5 </bdi>Koppelvlakstandaard WUS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">1.5.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wsdl"><bdi class="secno">1.5.1.1 </bdi>WSDL</a></li><li class="tocline"><a class="tocxref" href="#resulterende-berichtheaders"><bdi class="secno">1.5.1.2 </bdi>Resulterende berichtheaders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ondersteunde-varianten"><bdi class="secno">1.5.2 </bdi>Ondersteunde varianten</a></li><li class="tocline"><a class="tocxref" href="#compliancevoorzieningen"><bdi class="secno">1.5.3 </bdi>Compliancevoorzieningen</a></li><li class="tocline"><a class="tocxref" href="#gehanteerde-standaarden"><bdi class="secno">1.5.4 </bdi>Gehanteerde standaarden</a></li><li class="tocline"><a class="tocxref" href="#voorschriften"><bdi class="secno">1.5.5 </bdi>Voorschriften</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service-definitie-wsdl"><bdi class="secno">1.5.5.1 </bdi>Service definitie WSDL</a></li><li class="tocline"><a class="tocxref" href="#ws-addressing"><bdi class="secno">1.5.5.2 </bdi>WS-Addressing</a></li><li class="tocline"><a class="tocxref" href="#binaire-data"><bdi class="secno">1.5.5.3 </bdi>Binaire Data</a></li><li class="tocline"><a class="tocxref" href="#beveiliging"><bdi class="secno">1.5.5.4 </bdi>Beveiliging</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#point-to-point-beveiliging"><bdi class="secno">1.5.5.4.1 </bdi>Point-to-Point beveiliging</a></li><li class="tocline"><a class="tocxref" href="#end-to-end-beveiliging"><bdi class="secno">1.5.5.4.2 </bdi>End-to-End beveiliging</a></li></ol></li><li class="tocline"><a class="tocxref" href="#naamgeving-namespaces"><bdi class="secno">1.5.5.5 </bdi>Naamgeving, namespaces</a></li></ol></li><li class="tocline"><a class="tocxref" href="#foutafhandeling"><bdi class="secno">1.5.6 </bdi>Foutafhandeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-profielen-wus"><bdi class="secno">1.6 </bdi>Digikoppeling profielen WUS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wus-profiel-digikoppeling-2w-be"><bdi class="secno">1.6.1 </bdi>WUS Profiel Digikoppeling 2W-be</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#beveiliging-0"><bdi class="secno">1.6.1.1 </bdi>Beveiliging</a></li><li class="tocline"><a class="tocxref" href="#headerblocks"><bdi class="secno">1.6.1.2 </bdi>Headerblocks</a></li><li class="tocline"><a class="tocxref" href="#mtom"><bdi class="secno">1.6.1.3 </bdi>MTOM</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wus-profiel-digikoppeling-2w-be-s"><bdi class="secno">1.6.2 </bdi>WUS Profiel Digikoppeling 2W-be-S</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#beveiliging-1"><bdi class="secno">1.6.2.1 </bdi>Beveiliging</a></li><li class="tocline"><a class="tocxref" href="#headerblocks-0"><bdi class="secno">1.6.2.2 </bdi>Headerblocks</a></li><li class="tocline"><a class="tocxref" href="#mtom-0"><bdi class="secno">1.6.2.3 </bdi>MTOM</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wus-profiel-digikoppeling-2w-be-se"><bdi class="secno">1.6.3 </bdi>WUS Profiel Digikoppeling 2W-be-SE</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#beveiliging-2"><bdi class="secno">1.6.3.1 </bdi>Beveiliging</a></li><li class="tocline"><a class="tocxref" href="#headerblocks-1"><bdi class="secno">1.6.3.2 </bdi>Headerblocks</a></li><li class="tocline"><a class="tocxref" href="#mtom-1"><bdi class="secno">1.6.3.3 </bdi>MTOM</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section class="introductory" data-format="markdown"><h1>Documentbeheer</h1><p>Documentbeheer</p><table class="dkkvs">
 <thead>
 <tr>
@@ -538,7 +983,7 @@ h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:
 <td>Postbus 96810 2509<br>JE Den Haag<br>t. 0900 555 4555 (10 ct p/m)<br>e.<a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
 </tr>
 </tbody></table></section>
-  <section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" aria-label="§" href="#inleiding"></a></h2><section id="doel-en-doelgroep"><h3 id="x1-1-doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en Doelgroep<a class="self-link" aria-label="§" href="#doel-en-doelgroep"></a></h3><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling
+  <section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a><bdi class="secno">1. </bdi>Inleiding</h2><section id="doel-en-doelgroep"><h3 id="x1-1-doel-en-doelgroep"><a class="self-link" href="#doel-en-doelgroep" aria-label="Permalink for Section 1.1"></a><bdi class="secno">1.1 </bdi>Doel en Doelgroep</h3><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling
 koppelvlak standaard WUS</p><p>Het document is bestemd voor architecten en ontwikkelaars die op basis van WUS
 gegevens willen uitwisselen via Digikoppeling.</p><p>Alle Digikoppeling webservices die op WUS gebaseerd zijn, moeten conformeren aan
 de koppelvlakstandaard WUS. Deze wordt tot in detail in dit document
@@ -546,10 +991,10 @@ gespecificeerd. Doel van dit document is ontwikkelaars te informeren wat deze
 koppelvlakstandaard nu precies inhoudt en waar zij zich aan moeten conformeren.
 Het document is bestemd voor architecten en ontwikkelaars die op basis van WUS
 gegevens willen uitwisselen via Digikoppeling. Het gaat hierbij om zowel service
-providers als service requesters (clients).</p></section><section id="opbouw-digikoppeling-documentatie"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie<a class="self-link" aria-label="§" href="#opbouw-digikoppeling-documentatie"></a></h3><p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt
-opgebouwd:</p><p><figure id="DK_Specificatie_structuur"><img src="media/DK_Specificatie_structuur.png" alt="Opbouw documentatie Digikoppeling" title="Opbouw documentatie Digikoppeling" width="978" height="570"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p><p>Dit document beschrijft de WUS variant van de koppelvlakstandaarden. Naast de
+providers als service requesters (clients).</p></section><section id="opbouw-digikoppeling-documentatie"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><a class="self-link" href="#opbouw-digikoppeling-documentatie" aria-label="Permalink for Section 1.2"></a><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</h3><p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt
+opgebouwd:</p><p><img src="media/DK_Specificatie_structuur.png" alt="Opbouw documentatie Digikoppeling" title="Opbouw documentatie Digikoppeling"></p><p>Dit document beschrijft de WUS variant van de koppelvlakstandaarden. Naast de
 Koppelvlakstandaard WUS is er ook de ebMS2-standaard. Die wordt in een apart
-document beschreven.</p></section><section id="koppelvlak-koppelvlakstandaard"><h3 id="x1-3-koppelvlak-koppelvlakstandaard"><bdi class="secno">1.3 </bdi>Koppelvlak &amp; koppelvlakstandaard<a class="self-link" aria-label="§" href="#koppelvlak-koppelvlakstandaard"></a></h3><p>Een koppelvlak is een interface die volgens standaarden de gegevensuitwisseling
+document beschreven.</p></section><section id="koppelvlak-koppelvlakstandaard"><h3 id="x1-3-koppelvlak-koppelvlakstandaard"><a class="self-link" href="#koppelvlak-koppelvlakstandaard" aria-label="Permalink for Section 1.3"></a><bdi class="secno">1.3 </bdi>Koppelvlak &amp; koppelvlakstandaard</h3><p>Een koppelvlak is een interface die volgens standaarden de gegevensuitwisseling
 vastlegt. Het werken met vaste standaarden is essentieel voor een koppelvlak.
 Hierdoor wordt implementatie vergemakkelijkt. Ook wordt het mogelijk diverse
 soorten berichten door te sturen met een grote mate van interoperabiliteit,
@@ -571,7 +1016,7 @@ koppelvlakdefinitie bestaat uit:</p><ul>
   informatie over velden en hun specifieke inhoud.</li>
 </ul><p>De voor Digikoppeling vereiste interoperabiliteit van de WUS standaarden van
 OASIS en W3C wordt gebaseerd op de profielen (en tests) van OASIS WS-BRSP
-(voorheen WS-I).</p></section><section id="opbouw-van-dit-document"><h3 id="x1-4-opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document<a class="self-link" aria-label="§" href="#opbouw-van-dit-document"></a></h3><p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.</p><p>Hoofdstuk 2 bevat de kern van de standaard. Deze is onderverdeeld naar
+(voorheen WS-I).</p></section><section id="opbouw-van-dit-document"><h3 id="x1-4-opbouw-van-dit-document"><a class="self-link" href="#opbouw-van-dit-document" aria-label="Permalink for Section 1.4"></a><bdi class="secno">1.4 </bdi>Opbouw van dit document</h3><p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.</p><p>Hoofdstuk 2 bevat de kern van de standaard. Deze is onderverdeeld naar
 onderwerpen/gebieden: WSDL, WS-Addressing, naamgeving, beveiliging,
 betrouwbaarheid en binaire data. Het identificeert de gekozen internationale
 (WS-I) profielen die dienen als fundament voor de Digikoppeling
@@ -579,7 +1024,7 @@ Koppelvlakstandaard WUS. Die keuzes, de nadere invullingen voor Digikoppeling
 binnen de ruimte van die standaarden/profielen en specifieke aandachtspunten bij
 de keuzes, vormen tezamen de “voorschriften” per onderwerp.</p><p>Hoofdstuk 3 definieert de resulterende Digikoppeling WUS profielen.</p><p>Gehanteerde terminologie: Glossary</p><p>Voor de definities die binnen het Digikoppeling project gehanteerd worden, zie
 de ‘Digikoppeling Glossary’ via de onderstaande website.</p><p>Website</p><p>Dit document en andere documentatie is beschikbaar op
-<a href="http://www.logius.nl/digikoppeling">www.logius.nl/digikoppeling</a>.</p></section><section id="koppelvlakstandaard-wus"><h3 id="x1-5-koppelvlakstandaard-wus"><bdi class="secno">1.5 </bdi>Koppelvlakstandaard WUS<a class="self-link" aria-label="§" href="#koppelvlakstandaard-wus"></a></h3><section id="inleiding-0"><h4 id="x1-5-1-inleiding"><bdi class="secno">1.5.1 </bdi>Inleiding<a class="self-link" aria-label="§" href="#inleiding-0"></a></h4><p>WUS is een acroniem voor WSDL, UDDI en SOAP: WUS dus. Daarmee wordt een familie
+<a href="http://www.logius.nl/digikoppeling">www.logius.nl/digikoppeling</a>.</p></section><section id="koppelvlakstandaard-wus"><h3 id="x1-5-koppelvlakstandaard-wus"><a class="self-link" href="#koppelvlakstandaard-wus" aria-label="Permalink for Section 1.5"></a><bdi class="secno">1.5 </bdi>Koppelvlakstandaard WUS</h3><section id="inleiding-0"><h4 id="x1-5-1-inleiding"><a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 1.5.1"></a><bdi class="secno">1.5.1 </bdi>Inleiding</h4><p>WUS is een acroniem voor WSDL, UDDI en SOAP: WUS dus. Daarmee wordt een familie
 van internationale standaarden van OASIS en W3C bedoeld; deze worden ook vaak
 met WS-* aangeduid. Deze standaarden gaan over application-to-application
 webservices.</p><p>Alle Digikoppeling webservices die op WUS gebaseerd zijn, moeten aan deze
@@ -590,29 +1035,29 @@ beveiliging, betrouwbaarheid, binaire data, resulterende berichtheaders,
 profielen van Digikoppeling en compliancevoorzieningen. Deze standaard wordt
 verder aangevuld met “Best Practices” en adviezen, beschreven in een apart
 document. Alle documentatie over Digikoppeling is te vinden op de <a href="http://www.logius.nl/digikoppeling">Logius
-website</a>.</p><p>WSDL</p><p>Een webservice wordt deels formeel en automatisch verwerkbaar gedefinieerd
+website</a>.</p><section id="wsdl"><h5 id="x1-5-1-1-wsdl"><a class="self-link" href="#wsdl" aria-label="Permalink for Section 1.5.1.1"></a><bdi class="secno">1.5.1.1 </bdi>WSDL</h5><p>Een webservice wordt deels formeel en automatisch verwerkbaar gedefinieerd
 (beschrijving – description) door een WSDL. Deze WSDL geeft een beschrijving van
 de eisen die ten aanzien van de communicatie gesteld worden. Een WSDL kan onder
 andere bestaan uit meerdere schema definities in aparte XSD’s en policy
 definities. Gezamenlijk vormt dit een abstracte definitie van de webservice. De
 webservice communiceert feitelijk door middel van SOAP berichten, die
 gegenereerd worden op basis van de WSDL. Adressering en naamgeving zijn
-specifieke aandachtsgebieden.</p><p>Resulterende berichtheaders</p><p>Deze standaard beschrijft per definitie aan welke eisen een Digikoppeling WUS
+specifieke aandachtsgebieden.</p></section><section id="resulterende-berichtheaders"><h5 id="x1-5-1-2-resulterende-berichtheaders"><a class="self-link" href="#resulterende-berichtheaders" aria-label="Permalink for Section 1.5.1.2"></a><bdi class="secno">1.5.1.2 </bdi>Resulterende berichtheaders</h5><p>Deze standaard beschrijft per definitie aan welke eisen een Digikoppeling WUS
 implementatie moet voldoen. De praktijk leert dat dergelijke eisen vaak erg
 abstract zijn en dus gebaat zijn bij voorbeelden. Voorbeelden van berichten zijn
 gepubliceerd op de [<cite><a class="bibref" data-link-type="biblio" href="#bib-logius website" title="Logius Digikoppeling">Logius website</a></cite>]. Voorbeelden van WSDL’s zijn beschikbaar als
-onderdeel van de [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Digikoppeling Compliance Voorziening">Digikoppeling Compliance Voorziening</a></cite>].</p></section><section id="ondersteunde-varianten"><h4 id="x1-5-2-ondersteunde-varianten"><bdi class="secno">1.5.2 </bdi>Ondersteunde varianten<a class="self-link" aria-label="§" href="#ondersteunde-varianten"></a></h4><p>Om redenen van interoperabiliteit, eenvoud en overzichtelijkheid onderscheidt
+onderdeel van de [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Digikoppeling Compliance Voorziening">Digikoppeling Compliance Voorziening</a></cite>].</p></section></section><section id="ondersteunde-varianten"><h4 id="x1-5-2-ondersteunde-varianten"><a class="self-link" href="#ondersteunde-varianten" aria-label="Permalink for Section 1.5.2"></a><bdi class="secno">1.5.2 </bdi>Ondersteunde varianten</h4><p>Om redenen van interoperabiliteit, eenvoud en overzichtelijkheid onderscheidt
 deze Digikoppeling Koppelvlakstandaard een tweetal varianten van uitwisselingen.
 Elke variant veronderstelt bepaalde voorgedefinieerde keuzes voor parameters als
 beveiliging en betrouwbaarheid en is daarmee een “profiel” voor WUS.</p><p>Elke uitwisseling op basis van de WUS-protocollen over Digikoppeling zal moeten
 voldoen aan één of een combinatie van de volgende Digikoppeling WUS-varianten:</p><ul>
-<li><p><strong>Best Effort</strong>: dit zijn synchrone uitwisselingen die geen faciliteiten
+<li><p><strong>Best Effort:</strong> dit zijn synchrone uitwisselingen die geen faciliteiten
   voor betrouwbaarheid (ontvangstbevestigingen, duplicaateliminatie etc.)
   vereisen. Voorbeelden zijn toepassingen waar het eventueel verloren raken
   van sommige berichten niet problematisch is en waar snelle verwerking
   gewenst is.</p>
 </li>
-<li><p><strong>End-to-End</strong> <strong>Security</strong>: een bericht wordt beveiligd tussen de
+<li><p><strong>End-to-End Security:</strong> een bericht wordt beveiligd tussen de
   uiteindelijke consumer en de uiteindelijke provider, ook wanneer er zich
   intermediairs bevinden in het pad tussen die twee. Het betreft hier
   authenticatie van de consumerorganisatie, conform het Digikoppeling
@@ -621,24 +1066,22 @@ voldoen aan één of een combinatie van de volgende Digikoppeling WUS-varianten:
   attachments) onderweg. Voor de authenticatie en encryptie wordt
   gebruikgemaakt van WS-Security.</p>
 </li>
-<li><p>Attachments: één of meerdere bijlagen, naast natuurlijk het reeds bestaande
+<li><p><strong>Attachments:</strong> één of meerdere bijlagen, naast natuurlijk het reeds bestaande
   (xml) bericht zelf. Dit kan, maar hoeft niet, toegepast te worden in
   combinatie de bovengenoemde profielen: het is dus optioneel.</p>
 </li>
 <li><p>Vertrouwelijkheid en authenticatie van zender en ontvanger wordt als volgt
   gerealiseerd:</p>
 <ul>
-<li><p>voor Point-to-Point Security, door middel van twee-zijdig TLS op
-transport-niveau (in het HTTP kanaal). (De toepassing ervan is verplicht
-op alle Digikoppeling versies.)</p>
-</li>
-<li><p>voor End-to-End Security, door middel van signing (ondertekening) en
-(optioneel) encryptie (versleuteling) op berichtniveau (payload
-inclusief de attachments, ook wel 'bijlagen' genoemd) in combinatie met
-(point-to-point) twee-zijdig TLS in het HTTP kanaal.</p>
-</li>
+<li>voor Point-to-Point Security, door middel van twee-zijdig TLS op</li>
 </ul>
 </li>
+</ul><p> transport-niveau (in het HTTP kanaal). (De toepassing ervan is verplicht
+ op alle Digikoppeling versies.)</p><ul>
+<li>voor End-to-End Security, door middel van signing (ondertekening) en
+ (optioneel) encryptie (versleuteling) op berichtniveau (payload
+ inclusief de attachments, ook wel 'bijlagen' genoemd) in combinatie met
+ (point-to-point) twee-zijdig TLS in het HTTP kanaal.</li>
 </ul><p>De onderstaande tabel geeft in essentie de eigenschappen van de verschillende
 Digikoppeling profielen weer. Voor alle profielen wordt tweezijdig TLS gebruikt
 op transportniveau (HTTPS).</p><table class="dkkvs">
@@ -689,7 +1132,7 @@ op transportniveau (HTTPS).</p><table class="dkkvs">
 <td>√</td>
 <td>Optional</td>
 </tr>
-</tbody></table><p>Compliancevoorzieningen</p><p>Voor de Digikoppeling Koppelvlakstandaard WUS is een compliancevoorzieningen
+</tbody></table></section><section id="compliancevoorzieningen"><h4 id="x1-5-3-compliancevoorzieningen"><a class="self-link" href="#compliancevoorzieningen" aria-label="Permalink for Section 1.5.3"></a><bdi class="secno">1.5.3 </bdi>Compliancevoorzieningen</h4><p>Voor de Digikoppeling Koppelvlakstandaard WUS is een compliancevoorzieningen
 beschikbaar gesteld, waarmee een ontwikkelaar of beheerder kan testen “of het
 berichtenverkeer werkt”. Deze compliancevoorziening is gedefinieerd aan de hand
 van de WSDL’s die opvraagbaar zijn op
@@ -702,7 +1145,7 @@ van de WSDL’s die opvraagbaar zijn op
 </li>
 </ul><p>De documenten over de compliancevoorzieningen zijn te vinden op de [Logius
 website]. De [Digikoppeling Compliancevoorziening] zelf is beschikbaar op
-[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Digikoppeling Compliance Voorziening">Digikoppeling Compliance Voorziening</a></cite>]</p></section><section id="gehanteerde-standaarden"><h4 id="x1-5-3-gehanteerde-standaarden"><bdi class="secno">1.5.3 </bdi>Gehanteerde standaarden<a class="self-link" aria-label="§" href="#gehanteerde-standaarden"></a></h4><p>In dit hoofdstuk worden de verschillende versies van de onderliggende
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Digikoppeling Compliance Voorziening">Digikoppeling Compliance Voorziening</a></cite>]</p></section><section id="gehanteerde-standaarden"><h4 id="x1-5-4-gehanteerde-standaarden"><a class="self-link" href="#gehanteerde-standaarden" aria-label="Permalink for Section 1.5.4"></a><bdi class="secno">1.5.4 </bdi>Gehanteerde standaarden</h4><p>In dit hoofdstuk worden de verschillende versies van de onderliggende
 internationale standaarden vermeld.</p><p>Overwegingen</p><p>Primair wordt gekozen voor de interoperabele profielen van OASIS WS-BRSP
 (voorheen WS-I). Het gaat dan om WS-I Basic Profile (BP) 1.2, een set
 specificaties van webservices die interoperabiliteit bevorderen. Digikoppeling
@@ -787,7 +1230,7 @@ van standaarden:</p><table class="dkkvs">
 <td>WS-Security 1.0</td>
 <td>WS-Security 1.1</td>
 </tr>
-</tbody></table></section><section id="voorschriften"><h4 id="x1-5-4-voorschriften"><bdi class="secno">1.5.4 </bdi>Voorschriften<a class="self-link" aria-label="§" href="#voorschriften"></a></h4><p>De inhoud van de Digikoppeling standaard vloeit voort uit bovengenoemde
+</tbody></table></section><section id="voorschriften"><h4 id="x1-5-5-voorschriften"><a class="self-link" href="#voorschriften" aria-label="Permalink for Section 1.5.5"></a><bdi class="secno">1.5.5 </bdi>Voorschriften</h4><p>De inhoud van de Digikoppeling standaard vloeit voort uit bovengenoemde
 standaarden, of vormt een nadere invulling daarvan (een keuze uit toegestane
 mogelijkheden in die standaarden).</p><p>In de paragrafen hierna worden die onderdelen achtereenvolgens behandeld:</p><ul>
 <li><p>WSDL,</p>
@@ -802,7 +1245,7 @@ mogelijkheden in die standaarden).</p><p>In de paragrafen hierna worden die onde
 </li>
 <li><p>Namespace.</p>
 </li>
-</ul><section id="service-definitie-wsdl"><h5 id="x1-5-4-1-service-definitie-wsdl"><bdi class="secno">1.5.4.1 </bdi>Service definitie WSDL<a class="self-link" aria-label="§" href="#service-definitie-wsdl"></a></h5><p>Voorschriften ten gevolge van de keuze voor BP 1.2</p><table class="dkkvs">
+</ul><section id="service-definitie-wsdl"><h5 id="x1-5-5-1-service-definitie-wsdl"><a class="self-link" href="#service-definitie-wsdl" aria-label="Permalink for Section 1.5.5.1"></a><bdi class="secno">1.5.5.1 </bdi>Service definitie WSDL</h5><p>Voorschriften ten gevolge van de keuze voor BP 1.2</p><table class="dkkvs">
     <thead>
  <tr>
  <th>Nr</th>
@@ -885,7 +1328,7 @@ mogelijkheden in die standaarden).</p><p>In de paragrafen hierna worden die onde
 <td>WS008</td>
 <td>Het is verplicht een WS-Addressing Action referentie op te nemen in de WSDL. Het definiëren van een WS-Addressing action in WSDL kan met behulp van de Web Services Addressing 1.0 – Metadata standaard. Informatie hierover is te vinden via <a href="http://www.w3.org/TR/2007/REC-ws-addr-metadata-20070904/#explicitaction">http://www.w3.org/TR/2007/REC-ws-addr-metadata-20070904/#explicitaction</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ws-addr-metadata" title="Web Services Addressing 1.0 - Metadata">ws-addr-metadata</a></cite>]. Zie voor mogelijke vulling van wsam:action in WSDL “4.4.4 Default Action Pattern for WSDL 1.1” van de Web Services Addressing 1.0 – Metadata standaard (<a href="http://www.w3.org/TR/2007/REC-ws-addr-metadata-20070904/">http://www.w3.org/TR/2007/REC-ws-addr-metadata-20070904/</a>).</td>
 </tr>
-</tbody></table></section><section id="ws-addressing"><h5 id="x1-5-4-2-ws-addressing"><bdi class="secno">1.5.4.2 </bdi>WS-Addressing<a class="self-link" aria-label="§" href="#ws-addressing"></a></h5><p>Voorschriften als gevolg van het toepassen van WS-Addressing</p><p></p><table class="dkkvs">
+</tbody></table></section><section id="ws-addressing"><h5 id="x1-5-5-2-ws-addressing"><a class="self-link" href="#ws-addressing" aria-label="Permalink for Section 1.5.5.2"></a><bdi class="secno">1.5.5.2 </bdi>WS-Addressing</h5><p>Voorschriften als gevolg van het toepassen van WS-Addressing</p><p></p><table class="dkkvs">
     <thead>
         <tr>
             <th>Nr</th>
@@ -925,7 +1368,7 @@ mogelijkheden in die standaarden).</p><p>In de paragrafen hierna worden die onde
                 Het is toegestaan om overige WS-Addressing velden op te nemen in de berichten omdat bij sommige toolkits het genereren van deze velden niet onderdrukt kan worden. Hierbij geldt wel de beperking dat de waarde voor deze velden het routeringsmechanisme niet verstoort. Derhalve moet, indien het bericht andere velden dan hierboven bevat, de waarde <code>http://www.w3.org/2005/08/addressing/anonymous</code> of <code>http://www.w3.org/2005/08/addressing/none</code> aan deze velden toegekend worden. Overzicht verplichte WS-Addressing properties in request en response berichten (volgens
                 [<cite><a class="bibref" data-link-type="biblio" href="#bib-ws-addr-metadata" title="Web Services Addressing 1.0 - Metadata">ws-addr-metadata</a></cite>])
                 <br><br>
-                <strong>WS-Addresing request headers Field</strong>
+                <b>WS-Addressing request headers Field</b>
                 <table class="dkkvsincell dkkvs">
                     <thead>
                         <tr>
@@ -987,7 +1430,7 @@ mogelijkheden in die standaarden).</p><p>In de paragrafen hierna worden die onde
                 <sup>2</sup>Impliciet specificeren van het reply endpoint door weglaten van ReplyTo is
     ook toegestaan.
                 <br><br>
-                <strong>WS-Addressing response headers</strong>
+                <b>WS-Addressing response headers</b>
                 <table class="dkkvsincell dkkvs">
                     <thead>
                         <tr>
@@ -1061,7 +1504,7 @@ door betreffende velden in de header weg te laten. Zie WS-addressing 1.0- Core, 
             </p></td>
         </tr>
     </tbody>
-</table></section><section id="binaire-data"><h5 id="x1-5-4-3-binaire-data"><bdi class="secno">1.5.4.3 </bdi>Binaire Data<a class="self-link" aria-label="§" href="#binaire-data"></a></h5><p>In de Digikoppeling Koppelvlakstandaard WUS worden twee mogelijkheden
+</table></section><section id="binaire-data"><h5 id="x1-5-5-3-binaire-data"><a class="self-link" href="#binaire-data" aria-label="Permalink for Section 1.5.5.3"></a><bdi class="secno">1.5.5.3 </bdi>Binaire Data</h5><p>In de Digikoppeling Koppelvlakstandaard WUS worden twee mogelijkheden
 ondersteund om binaire data te versturen. Dat zijn Base64Binary (Base64Binary in
 payload element van het bericht) of MTOM (MIME wrappers waarbij binaire data in
 een aparte Multipart/Related pakket is opgenomen). Bij het toepassen van MTOM
@@ -1081,9 +1524,9 @@ conformeren aan de bestaande inrichting (en wel of niet gebruik van MTOM).</p><t
 <td>WM001</td>
 <td>Toepassen MTOM wordt door webservice provider bepaald.</td>
 </tr>
-</tbody></table></section><section id="beveiliging"><h5 id="x1-5-4-4-beveiliging"><bdi class="secno">1.5.4.4 </bdi>Beveiliging<a class="self-link" aria-label="§" href="#beveiliging"></a></h5><p>Point-to-Point en End-to-End beveiliging wordt ondersteund. Point-to-Point
+</tbody></table></section><section id="beveiliging"><h5 id="x1-5-5-4-beveiliging"><a class="self-link" href="#beveiliging" aria-label="Permalink for Section 1.5.5.4"></a><bdi class="secno">1.5.5.4 </bdi>Beveiliging</h5><p>Point-to-Point en End-to-End beveiliging wordt ondersteund. Point-to-Point
 beveiliging wordt uitgevoerd op basis van TLS, End-to-End beveiliging op basis
-van WS-Security.</p><p>Point-to-Point beveiliging</p><p>Deze beveiliging zorgt ervoor dat het volledige bericht en het http-protocol is
+van WS-Security.</p><section id="point-to-point-beveiliging"><h6 id="x1-5-5-4-1-point-to-point-beveiliging"><a class="self-link" href="#point-to-point-beveiliging" aria-label="Permalink for Section 1.5.5.4.1"></a><bdi class="secno">1.5.5.4.1 </bdi>Point-to-Point beveiliging</h6><p>Deze beveiliging zorgt ervoor dat het volledige bericht en het http-protocol is
 beveiligd tijdens het transport van verzender naar ontvanger. Alle Digikoppeling
 profielen verplichten point-to-point beveiliging. Hierbij gelden de volgende
 voorschriften:</p><table class="dkkvs">
@@ -1137,7 +1580,7 @@ voorschriften:</p><table class="dkkvs">
 <td>WT008</td>
 <td>Voor de TLS-sessie moet een maximale duur gelden, na het verloop hiervan wordt de verbinding verbroken. Partijen zijn vrij om de maximale duur zelf te bepalen.</td>
 </tr>
-</tbody></table><p>End-to-End beveiliging.</p><p>Deze beveiliging is optioneel en wordt bovenop point-to-point beveiliging
+</tbody></table></section><section id="end-to-end-beveiliging"><h6 id="x1-5-5-4-2-end-to-end-beveiliging"><a class="self-link" href="#end-to-end-beveiliging" aria-label="Permalink for Section 1.5.5.4.2"></a><bdi class="secno">1.5.5.4.2 </bdi>End-to-End beveiliging</h6><p>Deze beveiliging is optioneel en wordt bovenop point-to-point beveiliging
 ingezet op SOAP niveau met behulp van ondertekening en versleuteling. End-to-End
 beveiliging is primair van toepassing in de scenario’s waar intermediairs
 betrokken zijn gedurende de gegevensuitwisseling en in scenario’s waarbij
@@ -1158,7 +1601,7 @@ onweerlegbaarheid van belang is.</p><table class="dkkvs">
 </tr>
 <tr>
 <td>WB002</td>
-<td>Toepassen van Timestamp in security header met Timestamp Created is verplicht. Timestamp Expires is optioneel.<br><strong>Timestamp Created</strong> Verplicht onderdeel van een Timestamp.<br> <strong>Timestamp Expires</strong> Optioneel onderdeel van een Timestamp. <br> <strong>Timestamp tijd</strong><br> De tijdstamp moet een Universal Time Coordinated (UTC) tijdzone aanduiding hebben. Bij het toepassen van een timestamp gaat tijdsynchronisatie van de verschillende communicerende systemen een rol spelen. Indien dit niet mogelijk is moet hiermee met de vulling van de Created en Expires rekening worden gehouden door middel van een “timestampSkew“.</td>
+<td>Toepassen van Timestamp in security header met Timestamp Created is verplicht. Timestamp Expires is optioneel.<br>De tijdstamp moet een Universal Time Coordinated (UTC) tijdzone aanduiding hebben. Bij het toepassen van een timestamp gaat tijdsynchronisatie van de verschillende communicerende systemen een rol spelen. Indien dit niet mogelijk is moet hiermee met de vulling van de Created en Expires rekening worden gehouden door middel van een “timestampSkew“.</td>
 </tr>
 <tr>
 <td></td>
@@ -1299,16 +1742,16 @@ onweerlegbaarheid van belang is.</p><table class="dkkvs">
 <td></td>
 <td>Overwegingen:<br>Door het herhalen van de ondertekening van het requestbericht kan de ontvanger van het responsebericht valideren dat het oorspronkelijke requestbericht in onaangetaste staat is ontvangen en verwerkt.<br>Een contract wordt voor een Digikoppeling WUS Koppelvlak gedefinieerd door een WSDL. De WSDL 1.1 specificatie op zich biedt geen mogelijkheden om het gebruik van WS-Security aan te geven.</td>
 </tr>
-</tbody></table></section><section id="naamgeving-namespaces"><h5 id="x1-5-4-5-naamgeving-namespaces"><bdi class="secno">1.5.4.5 </bdi>Naamgeving, namespaces<a class="self-link" aria-label="§" href="#naamgeving-namespaces"></a></h5><p>Er worden geen aanvullende eisen gesteld aan de namespaces. In de header mogen
+</tbody></table></section></section><section id="naamgeving-namespaces"><h5 id="x1-5-5-5-naamgeving-namespaces"><a class="self-link" href="#naamgeving-namespaces" aria-label="Permalink for Section 1.5.5.5"></a><bdi class="secno">1.5.5.5 </bdi>Naamgeving, namespaces</h5><p>Er worden geen aanvullende eisen gesteld aan de namespaces. In de header mogen
 alleen velden voorkomen conform OASIS/W3C standaarden (gebaseerd op de daar
 gedefinieerde namespaces) , of service-specifieke namen, gedefinieerd door de
 provider met een namespace gedefinieerd door de provider. Ook aan de naamgeving
 van services, operations etc. worden vanuit Digikoppeling geen eisen gesteld. De
-prefix “Digikoppeling” is gereserveerd voor mogelijk toekomstig gebruik.</p></section></section><section id="foutafhandeling"><h4 id="x1-5-5-foutafhandeling"><bdi class="secno">1.5.5 </bdi>Foutafhandeling<a class="self-link" aria-label="§" href="#foutafhandeling"></a></h4><p>Er worden momenteel nog geen eisen gesteld aan de foutafhandeling, anders dan in
+prefix “Digikoppeling” is gereserveerd voor mogelijk toekomstig gebruik.</p></section></section><section id="foutafhandeling"><h4 id="x1-5-6-foutafhandeling"><a class="self-link" href="#foutafhandeling" aria-label="Permalink for Section 1.5.6"></a><bdi class="secno">1.5.6 </bdi>Foutafhandeling</h4><p>Er worden momenteel nog geen eisen gesteld aan de foutafhandeling, anders dan in
 de onderliggende specificaties vermeld worden, zoals WS-I Basic Profile 1.2. In
 het document ” Digikoppeling Best Practices WUS” is een aantal adviezen
 opgenomen.</p><p>Aanvullende standaarden die gebruikt worden in combinatie met Digikoppeling
-kunnen overigens wel eisen stellen aan de fouthandeling.</p></section></section><section id="digikoppeling-profielen-wus"><h3 id="x1-6-digikoppeling-profielen-wus"><bdi class="secno">1.6 </bdi>Digikoppeling profielen WUS<a class="self-link" aria-label="§" href="#digikoppeling-profielen-wus"></a></h3><p>Op Digikoppeling wordt gewerkt met zogenaamde “profielen”. Een profiel is een
+kunnen overigens wel eisen stellen aan de fouthandeling.</p></section></section><section id="digikoppeling-profielen-wus"><h3 id="x1-6-digikoppeling-profielen-wus"><a class="self-link" href="#digikoppeling-profielen-wus" aria-label="Permalink for Section 1.6"></a><bdi class="secno">1.6 </bdi>Digikoppeling profielen WUS</h3><p>Op Digikoppeling wordt gewerkt met zogenaamde “profielen”. Een profiel is een
 gedefinieerde bundeling van functionaliteit en daarmee van voorschriften. In de
 huidige Digikoppeling versie zijn drie WUS-profielen aanwezig:</p><ul>
 <li><p>Digikoppeling 2W-be,</p>
@@ -1322,37 +1765,31 @@ standaard) als niet geoptimaliseerd verstuurd kunnen worden. Hierom zijn voor
 elk profiel voorbeeldberichten beschikbaar in zowel de geoptimaliseerde (MTOM)
 als niet geoptimaliseerde vorm. Alle voorbeeldberichten zijn gebundeld in een
 set [WUS voorbeelden] en beschikbaar op de [<cite><a class="bibref" data-link-type="biblio" href="#bib-logius website" title="Logius Digikoppeling">Logius website</a></cite>].</p><p>Ten aanzien van beveiliging maken alle profielen gebruik van tweezijdig TLS, zie
-hoofdstuk 2 paragraaf “Point-to-Point beveiliging”.</p><p><figure id="wus_profielen_digikoppeling"><img src="media/wus_profielen_digikoppeling.png" alt="Digikoppeling WUS profielen" title="Schematische weergave Digikoppeling WUS profielen" width="1170" height="682"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Digikoppeling WUS profielen</span></figcaption></figure></p><p>In het bovenstaande figuur wordt schematisch weergegeven welke WUS profielen
+hoofdstuk 2 paragraaf “Point-to-Point beveiliging”.</p><p><img src="media/wus_profielen_digikoppeling.png" alt="Digikoppeling WUS profielen bevinden zich in de logistieke laag dat via een SOAP processor verbonden is met de applicatielaag." title="Schematische weergave Digikoppeling WUS profielen"></p><p>In het bovenstaande figuur wordt schematisch weergegeven welke WUS profielen
 Digikoppeling biedt en wat de algemene verschillen zijn. Alle profielen worden
 in de volgende paragrafen in meer detail beschreven. In set [WUS voorbeelden]
 zijn voorbeeld berichten opgenomen voor de drie profielen. Deze bieden een
-duidelijk inzicht hoe de berichten uiteindelijk eruit komen te zien.</p><section id="wus-profiel-digikoppeling-2w-be"><h4 id="x1-6-1-wus-profiel-digikoppeling-2w-be"><bdi class="secno">1.6.1 </bdi>WUS Profiel Digikoppeling 2W-be<a class="self-link" aria-label="§" href="#wus-profiel-digikoppeling-2w-be"></a></h4><p>Beveiliging</p><p>Dit profiel maakt voor de beveiliging alleen gebruik van tweezijdig TLS.</p><p>Headerblocks</p><p>Alleen de verplichte WS-Addressing headers zijn hier van toepassing (zie
-soapenv:Header in [<cite><a class="bibref" data-link-type="biblio" href="#bib-wus voorbeelden" title="Digikoppeling WUS voorbeelden (zip)">WUS voorbeelden</a></cite>]).</p><p>MTOM</p><p>De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [WUS
-voorbeelden].</p></section><section id="wus-profiel-digikoppeling-2w-be-s"><h4 id="x1-6-2-wus-profiel-digikoppeling-2w-be-s"><bdi class="secno">1.6.2 </bdi>WUS Profiel Digikoppeling 2W-be-S<a class="self-link" aria-label="§" href="#wus-profiel-digikoppeling-2w-be-s"></a></h4><p>Beveiliging</p><p>Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
+duidelijk inzicht hoe de berichten uiteindelijk eruit komen te zien.</p><section id="wus-profiel-digikoppeling-2w-be"><h4 id="x1-6-1-wus-profiel-digikoppeling-2w-be"><a class="self-link" href="#wus-profiel-digikoppeling-2w-be" aria-label="Permalink for Section 1.6.1"></a><bdi class="secno">1.6.1 </bdi>WUS Profiel Digikoppeling 2W-be</h4><section id="beveiliging-0"><h5 id="x1-6-1-1-beveiliging"><a class="self-link" href="#beveiliging-0" aria-label="Permalink for Section 1.6.1.1"></a><bdi class="secno">1.6.1.1 </bdi>Beveiliging</h5><p>Dit profiel maakt voor de beveiliging alleen gebruik van tweezijdig TLS.</p></section><section id="headerblocks"><h5 id="x1-6-1-2-headerblocks"><a class="self-link" href="#headerblocks" aria-label="Permalink for Section 1.6.1.2"></a><bdi class="secno">1.6.1.2 </bdi>Headerblocks</h5><p>Alleen de verplichte WS-Addressing headers zijn hier van toepassing (zie
+soapenv:Header in [<cite><a class="bibref" data-link-type="biblio" href="#bib-wus voorbeelden" title="Digikoppeling WUS voorbeelden (zip)">WUS voorbeelden</a></cite>]).</p></section><section id="mtom"><h5 id="x1-6-1-3-mtom"><a class="self-link" href="#mtom" aria-label="Permalink for Section 1.6.1.3"></a><bdi class="secno">1.6.1.3 </bdi>MTOM</h5><p>De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [WUS
+voorbeelden].</p></section></section><section id="wus-profiel-digikoppeling-2w-be-s"><h4 id="x1-6-2-wus-profiel-digikoppeling-2w-be-s"><a class="self-link" href="#wus-profiel-digikoppeling-2w-be-s" aria-label="Permalink for Section 1.6.2"></a><bdi class="secno">1.6.2 </bdi>WUS Profiel Digikoppeling 2W-be-S</h4><section id="beveiliging-1"><h5 id="x1-6-2-1-beveiliging"><a class="self-link" href="#beveiliging-1" aria-label="Permalink for Section 1.6.2.1"></a><bdi class="secno">1.6.2.1 </bdi>Beveiliging</h5><p>Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend zoals vermeld in hoofdstuk 2, paragraaf
-End-to-End beveiliging.</p><p>Headerblocks</p><p>In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
-(wsse:Security) headers van toepassing (zie [WUS voorbeelden]).</p><p>MTOM</p><p>De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling 2W-be-S
-worden weergegeven in [WUS voorbeelden].</p></section><section id="wus-profiel-digikoppeling-2w-be-se"><h4 id="x1-6-3-wus-profiel-digikoppeling-2w-be-se"><bdi class="secno">1.6.3 </bdi>WUS Profiel Digikoppeling 2W-be-SE<a class="self-link" aria-label="§" href="#wus-profiel-digikoppeling-2w-be-se"></a></h4><p>Beveiliging</p><p>Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
+End-to-End beveiliging.</p></section><section id="headerblocks-0"><h5 id="x1-6-2-2-headerblocks"><a class="self-link" href="#headerblocks-0" aria-label="Permalink for Section 1.6.2.2"></a><bdi class="secno">1.6.2.2 </bdi>Headerblocks</h5><p>In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
+(wsse:Security) headers van toepassing (zie [WUS voorbeelden]).</p></section><section id="mtom-0"><h5 id="x1-6-2-3-mtom"><a class="self-link" href="#mtom-0" aria-label="Permalink for Section 1.6.2.3"></a><bdi class="secno">1.6.2.3 </bdi>MTOM</h5><p>De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling 2W-be-S
+worden weergegeven in [WUS voorbeelden].</p></section></section><section id="wus-profiel-digikoppeling-2w-be-se"><h4 id="x1-6-3-wus-profiel-digikoppeling-2w-be-se"><a class="self-link" href="#wus-profiel-digikoppeling-2w-be-se" aria-label="Permalink for Section 1.6.3"></a><bdi class="secno">1.6.3 </bdi>WUS Profiel Digikoppeling 2W-be-SE</h4><section id="beveiliging-2"><h5 id="x1-6-3-1-beveiliging"><a class="self-link" href="#beveiliging-2" aria-label="Permalink for Section 1.6.3.1"></a><bdi class="secno">1.6.3.1 </bdi>Beveiliging</h5><p>Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend en versleuteld zoals vermeld in
-hoofdstuk 2, paragraaf End-to-End beveiliging.</p><p>Headerblocks</p><p>In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
+hoofdstuk 2, paragraaf End-to-End beveiliging.</p></section><section id="headerblocks-1"><h5 id="x1-6-3-2-headerblocks"><a class="self-link" href="#headerblocks-1" aria-label="Permalink for Section 1.6.3.2"></a><bdi class="secno">1.6.3.2 </bdi>Headerblocks</h5><p>In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing. Ook wordt hierbij de payload van het
-bericht versleuteld (xenc:EncryptedData) (zie [WUS voorbeelden]).</p><p>MTOM</p><p>De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling
-2W-be-SE worden weergegeven in [WUS voorbeelden].</p></section></section></section>
+bericht versleuteld (xenc:EncryptedData) (zie [WUS voorbeelden]).</p></section><section id="mtom-1"><h5 id="x1-6-3-3-mtom"><a class="self-link" href="#mtom-1" aria-label="Permalink for Section 1.6.3.3"></a><bdi class="secno">1.6.3.3 </bdi>MTOM</h5><p>De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling
+2W-be-SE worden weergegeven in [WUS voorbeelden].</p></section></section></section></section>
   
     
-    <section id="conformance"><h2 id="x2-conformiteit"><bdi class="secno">2. </bdi>Conformiteit<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+    <section id="conformance"><h2 id="x2-conformiteit"><a class="self-link" href="#conformance" aria-label="Permalink for Section 2."></a><bdi class="secno">2. </bdi>Conformiteit</h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
       
     </section>
   
     <section id="tof">
       
-    <h2 id="x3-lijst-met-figuren"><bdi class="secno">3. </bdi>Lijst met figuren<a class="self-link" aria-label="§" href="#tof"></a></h2><ul class="tof">
-        <li class="tofline">
-    <a class="tocxref" href="#DK_Specificatie_structuur">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
-  </li><li class="tofline">
-    <a class="tocxref" href="#wus_profielen_digikoppeling">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Digikoppeling WUS profielen</span></a>
-  </li>
-      </ul></section>
+    </section>
   
     
       
@@ -1366,39 +1803,49 @@ bericht versleuteld (xenc:EncryptedData) (zie [WUS voorbeelden]).</p><p>MTOM</p>
     
 
 
-<section id="references" class="appendix"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normatieve-referenties">
-    <h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties<a class="self-link" aria-label="§" href="#normatieve-referenties"></a></h3>
-    <dl class="bibliography"><dt id="bib-digikoppeling beveiligingsdocument">[Digikoppeling Beveiligingsdocument]</dt><dd><a href="https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf"><cite>Digikoppeling Beveiligingsstandaarden en voorschriften</cite></a>.  Logius. 2020. URL: <a href="https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf">https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf</a></dd><dt id="bib-pkioverheid certificaten">[PKIoverheid Certificaten]</dt><dd><a href="https://cert.pkioverheid.nl/"><cite>Pkioverheid certificaten</cite></a>.  Logius. URL: <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a></dd><dt id="bib-ws-addr-core">[ws-addr-core]</dt><dd><a href="https://www.w3.org/TR/ws-addr-core/"><cite>Web Services Addressing 1.0 - Core</cite></a>. Martin Gudgin; Marc Hadley; Tony Rogers.  W3C. 9 May 2006. W3C Recommendation. URL: <a href="https://www.w3.org/TR/ws-addr-core/">https://www.w3.org/TR/ws-addr-core/</a></dd><dt id="bib-ws-addr-metadata">[ws-addr-metadata]</dt><dd><a href="https://www.w3.org/TR/ws-addr-metadata/"><cite>Web Services Addressing 1.0 - Metadata</cite></a>. Martin Gudgin; Marc Hadley; Tony Rogers; Ümit Yalçinalp et al.  W3C. 4 September 2007. W3C Recommendation. URL: <a href="https://www.w3.org/TR/ws-addr-metadata/">https://www.w3.org/TR/ws-addr-metadata/</a></dd><dt id="bib-wsdl">[wsdl]</dt><dd><a href="https://www.w3.org/TR/wsdl"><cite>Web Service Definition Language (WSDL)</cite></a>.  W3C. 15 March 2001. W3C Note. URL: <a href="https://www.w3.org/TR/wsdl">https://www.w3.org/TR/wsdl</a></dd></dl>
+<section id="references" class="appendix"><h2 id="a-referenties"><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a><bdi class="secno">A. </bdi>Referenties</h2><section id="normatieve-referenties">
+    <h3 id="a-1-normatieve-referenties"><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a><bdi class="secno">A.1 </bdi>Normatieve referenties</h3>
+    <dl class="bibliography"><dt id="bib-digikoppeling beveiligingsdocument">[Digikoppeling Beveiligingsdocument]</dt><dd><a href="https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf"><cite>Digikoppeling Beveiligingsstandaarden en voorschriften</cite></a>.  Logius. 2020. URL: <a href="https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf">https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf</a></dd><dt id="bib-pkioverheid certificaten">[PKIoverheid Certificaten]</dt><dd><a href="https://cert.pkioverheid.nl/"><cite>Pkioverheid certificaten</cite></a>.  Logius. URL: <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a></dd><dt id="bib-ws-addr-core">[ws-addr-core]</dt><dd><a href="https://www.w3.org/TR/ws-addr-core/"><cite>Web Services Addressing 1.0 - Core</cite></a>. Martin Gudgin; Marc Hadley; Tony Rogers.  W3C. 9 May 2006. W3C Recommendation. URL: <a href="https://www.w3.org/TR/ws-addr-core/">https://www.w3.org/TR/ws-addr-core/</a></dd><dt id="bib-ws-addr-metadata">[ws-addr-metadata]</dt><dd><a href="https://www.w3.org/TR/ws-addr-metadata/"><cite>Web Services Addressing 1.0 - Metadata</cite></a>. Martin Gudgin; Marc Hadley; Tony Rogers; Ümit Yalçinalp et al.  W3C. 4 September 2007. W3C Recommendation. URL: <a href="https://www.w3.org/TR/ws-addr-metadata/">https://www.w3.org/TR/ws-addr-metadata/</a></dd><dt id="bib-wsdl">[wsdl]</dt><dd><a href="https://www.w3.org/TR/wsdl"><cite>Web Service Definition Language (WSDL)</cite></a>.  W3C. 15 March 2001. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/wsdl">https://www.w3.org/TR/wsdl</a></dd></dl>
   </section><section id="informatieve-referenties">
-    <h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties<a class="self-link" aria-label="§" href="#informatieve-referenties"></a></h3>
+    <h3 id="a-2-informatieve-referenties"><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.2"></a><bdi class="secno">A.2 </bdi>Informatieve referenties</h3>
     <dl class="bibliography"><dt id="bib-digikoppeling compliance voorziening">[Digikoppeling Compliance Voorziening]</dt><dd><a href="https://portaal.digikoppeling.nl"><cite>Digikoppeling Compliance Voorziening</cite></a>.  Logius. URL: <a href="https://portaal.digikoppeling.nl">https://portaal.digikoppeling.nl</a></dd><dt id="bib-logius website">[Logius website]</dt><dd><a href="https://logius.nl/digikoppeling"><cite>Logius Digikoppeling</cite></a>.  Logius. URL: <a href="https://logius.nl/digikoppeling">https://logius.nl/digikoppeling</a></dd><dt id="bib-wus voorbeelden">[WUS voorbeelden]</dt><dd><a href="https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip"><cite>Digikoppeling WUS voorbeelden (zip)</cite></a>.  Logius. URL: <a href="https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip">https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip</a></dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><script id="respec-dfn-panel">(() => {
-// @ts-check
+  </p><script id="respec-dfn-panel">// @ts-check
 if (document.respec) {
-  document.respec.ready.then(dfnPanel);
+  document.respec.ready.then(setupPanel);
 } else {
-  dfnPanel();
+  setupPanel();
 }
 
-function dfnPanel() {
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
   /** @type {HTMLElement} */
-  let panel;
-  document.body.addEventListener("click", event => {
-    if (!(event.target instanceof HTMLElement)) return;
+  let panel = null;
+  return event => {
+    const { target, type } = event;
 
-    /** @type {HTMLElement} */
-    const el = event.target;
+    if (!(target instanceof HTMLElement)) return;
 
-    const action = deriveAction(el);
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
     switch (action) {
       case "show": {
-        if (panel) hidePanel(panel);
+        hidePanel(panel);
         /** @type {HTMLElement} */
-        const dfn = el.closest("dfn, .index-term");
+        const dfn = target.closest("dfn, .index-term");
         panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-        displayPanel(dfn, panel, { x: event.clientX, y: event.clientY });
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
         break;
       }
       case "dock": {
@@ -1409,30 +1856,59 @@ function dfnPanel() {
       }
       case "hide": {
         hidePanel(panel);
+        panel = null;
         break;
       }
     }
-  });
+  };
 }
 
-/** @param {HTMLElement} clickTarget */
-function deriveAction(clickTarget) {
-  const hitALink = !!clickTarget.closest("a");
-  if (clickTarget.closest("dfn, .index-term")) {
-    return hitALink ? null : "show";
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
   }
-  if (clickTarget.closest(".dfn-panel")) {
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
     if (hitALink) {
-      const clickedSelfLink = clickTarget.classList.contains("self-link");
-      return clickedSelfLink ? "hide" : "dock";
+      return target.classList.contains("self-link") ? "hide" : "dock";
     }
-    const panel = clickTarget.closest(".dfn-panel");
-    return panel.classList.contains("docked") ? "hide" : null;
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
   }
   if (document.querySelector(".dfn-panel:not([hidden])")) {
     return "hide";
   }
-  return null;
+  return "none";
 }
 
 /**
@@ -1474,11 +1950,86 @@ function displayPanel(dfn, panel, { x, y }) {
     const caret = panel.querySelector(".caret");
     caret.style.left = `${newCaretOffset}px`;
   }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
 }
 
 /** @param {HTMLElement} panel */
 function hidePanel(panel) {
+  if (!panel) return;
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script></body></html>
+</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
