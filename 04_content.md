@@ -379,7 +379,7 @@ Voorschriften als gevolg van het toepassen van WS-Addressing
                 Het is toegestaan om overige WS-Addressing velden op te nemen in de berichten omdat bij sommige toolkits het genereren van deze velden niet onderdrukt kan worden. Hierbij geldt wel de beperking dat de waarde voor deze velden het routeringsmechanisme niet verstoort. Derhalve moet, indien het bericht andere velden dan hierboven bevat, de waarde `http://www.w3.org/2005/08/addressing/anonymous` of `http://www.w3.org/2005/08/addressing/none` aan deze velden toegekend worden. Overzicht verplichte WS-Addressing properties in request en response berichten (volgens
                 [[ws-addr-metadata]])
                 <br><br>
-                <strong>WS-Addresing request headers Field</strong>
+                <b>WS-Addressing request headers Field</b>
                 <table class="dkkvsincell">
                     <thead>
                         <tr>
@@ -441,7 +441,7 @@ Voorschriften als gevolg van het toepassen van WS-Addressing
                 <sup>2</sup>Impliciet specificeren van het reply endpoint door weglaten van ReplyTo is
     ook toegestaan.
                 <br><br>
-                <strong>WS-Addressing response headers</strong>
+                <b>WS-Addressing response headers</b>
                 <table class="dkkvsincell">
                     <thead>
                         <tr>
