@@ -122,8 +122,8 @@ specifieke aandachtsgebieden.
 Deze standaard beschrijft per definitie aan welke eisen een Digikoppeling WUS
 implementatie moet voldoen. De praktijk leert dat dergelijke eisen vaak erg
 abstract zijn en dus gebaat zijn bij voorbeelden. Voorbeelden van berichten zijn
-gepubliceerd op de [[?Logius website]]. Voorbeelden van WSDL’s zijn beschikbaar als
-onderdeel van de [[?Digikoppeling Compliance Voorziening]].
+gepubliceerd op de [[[?Logius]]]. Voorbeelden van WSDL’s zijn beschikbaar als
+onderdeel van de [[[?Compliance]]].
 
 ## Ondersteunde varianten 
 
@@ -183,7 +183,7 @@ Voor de Digikoppeling Koppelvlakstandaard WUS is een compliancevoorzieningen
 beschikbaar gesteld, waarmee een ontwikkelaar of beheerder kan testen “of het
 berichtenverkeer werkt”. Deze compliancevoorziening is gedefinieerd aan de hand
 van de WSDL’s die opvraagbaar zijn op
-[[?Digikoppeling Compliance Voorziening]].
+[[[?Compliance]]].
 
 De volgende interacties zijn beschikbaar:
 
@@ -195,7 +195,7 @@ De volgende interacties zijn beschikbaar:
 
 De documenten over de compliancevoorzieningen zijn te vinden op de [Logius
 website]. De [Digikoppeling Compliancevoorziening] zelf is beschikbaar op
-[[?Digikoppeling Compliance Voorziening]]
+[[[?Compliance]]]
 
 ## Gehanteerde standaarden
 
@@ -213,7 +213,7 @@ zeggen interoperabel geïmplementeerd zijn in het grootste deel van de
 drafts. Digikoppeling kiest daarom voor WS-I Standaarden met status final.
 
 De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden
-beschreven in het [[Digikoppeling Beveiligingsdocument]].
+beschreven in het [[[Beveiligingsdocument]]].
 
 Resulterende beslissingen ten aanzien van standaarden:
 
@@ -222,7 +222,7 @@ Resulterende beslissingen ten aanzien van standaarden:
 
 - WS-I BSP 1.1 voor berichtbeveiliging op basis van WS-Security.
 
-- De TLS versies zoals beschreven in [[Digikoppeling Beveiligingsdocument]],
+- De TLS versies zoals beschreven in [[[Beveiligingsdocument]]],
     conform de aanbevelingen in WS-I BSP 1.0 voor beveiliging op
     transport/kanaal niveau en aanbevelingen van NIST en NCSC.
 
@@ -240,7 +240,7 @@ van standaarden:
 | XML 1.0 (Second Edition) | WS-I Basic Profile 1.2 |
 | XML Schema Part 1: Structures | WS-I Basic Profile 1.2 |
 | XML Schema Part 2: Data types | WS-I Basic Profile 1.2 |
-| De huidig toegestane TLS versies zoals beschreven in [[Digikoppeling Beveiligingsdocument]] | WS-I Basic Profile 1.2,  NCSC, NIST, ENISA |
+| De huidig toegestane TLS versies zoals beschreven in [[[Beveiligingsdocument]]] | WS-I Basic Profile 1.2,  NCSC, NIST, ENISA |
 | HTTP over TLS Transport Layer Security (RFC2818) | WS-I Basic Profile 1.2 |
 | Internet X.509 Public Key Infrastructure Certificate and CRL Profile (RFC 3280) | PKI overheid 1.1 |
 | WS-Addressing 1.0 [[[ws-addr-metadata]]]| WS-I Basic Profile1.2 |
@@ -554,11 +554,11 @@ voorschriften:
 
 | Nr    | Omschrijving |
 |---|---|
-| WT001 | Authenticatie op transportniveau gebeurt op basis TLS met tweezijdige authenticatie. De huidige toegestane protocolversies zijn beschreven in het [[Digikoppeling Beveiligingsdocument]]. Client and Server authenticatie is vereist gebruikmakend van HTTPS en alle in [[Digikoppeling Beveiligingsdocument]] genoemde TLS versies. De TLS implementatie mag niet op een oudere TLS of SSL versie terug kunnen vallen. |
-| | Meer informatie in het [[Digikoppeling Beveiligingsdocument]] |
+| WT001 | Authenticatie op transportniveau gebeurt op basis TLS met tweezijdige authenticatie. De huidige toegestane protocolversies zijn beschreven in het [[[Beveiligingsdocument]]]. Client and Server authenticatie is vereist gebruikmakend van HTTPS en alle in [[[Beveiligingsdocument]]] genoemde TLS versies. De TLS implementatie mag niet op een oudere TLS of SSL versie terug kunnen vallen. |
+| | Meer informatie in het [[[Beveiligingsdocument]]] |
 | WT002 | De te gebruiken certificaten in de productie omgeving voldoen aan de eisen van PKIoverheid (PvE 3b) en de inhoud van de identificerende velden in het certificaat dienen te voldoen aan de afspraken als gesteld in de functionele eisen Authenticatie Digikoppeling. Met het toepassen van PKIoverheid-certificaten die Digikoppeling compliant zijn, wordt hieraan voldaan. |
-| WT003 | De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden beschreven in het [[Digikoppeling Beveiligingsdocument]] |
-| | Meer informatie in het [[Digikoppeling Beveiligingsdocument]] |
+| WT003 | De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden beschreven in het [[[Beveiligingsdocument]]] |
+| | Meer informatie in het [[[Beveiligingsdocument]]] |
 | WT004 | De geldigheid van het certificaat wordt getoetst met betrekking tot de geldigheidsdatum en de Certificate Revocation List(CRL) die voldoet aan de eisen van PKIoverheid. |
 | WT005 | De betreffende CRL dient zowel voor de versturende als ontvangende partij te benaderen zijn. |
 | WT006 | Voor communicatie over HTTPS wordt port 443 gebruikt. |
@@ -610,11 +610,11 @@ onweerlegbaarheid van belang is.
                         </tr>
                         <tr>
                             <td>Data Encryption Algorithms</td>
-                            <td>zie [[Digikoppeling Beveiligingsdocument]]
+                            <td>zie [[[Beveiligingsdocument]]]
                         </tr>
                         <tr>
                             <td>Key Transport Algorithms</td>
-                            <td>zie [[Digikoppeling Beveiligingsdocument]]
+                            <td>zie [[[Beveiligingsdocument]]]
                     </tbody>
                 </table>
             </td>
@@ -632,11 +632,11 @@ onweerlegbaarheid van belang is.
                     <tbody>
                         <tr>
                             <td>Data Encryption Algorithms</td>
-                            <td>zie [[Digikoppeling Beveiligingsdocument]]
+                            <td>zie [[[Beveiligingsdocument]]]
                         </tr>
                         <tr>
                             <td>Key Transport Algorithms</td>
-                            <td>zie [[Digikoppeling Beveiligingsdocument]]
+                            <td>zie [[[Beveiligingsdocument]]]
                     </tbody>
                 </table>
             </td>
@@ -648,7 +648,7 @@ onweerlegbaarheid van belang is.
 |---|---|
 |WB009|Security token X.509 Certificate Token (PKI Overheid Digikoppeling certificaat).|
 |WB010|Publieke sleutel welke gebruikt is voor het signing proces dient meegeleverd te worden met het bericht via een ‘Direct security token’ reference.|
-||Overwegingen:<br>Het certificaat wordt in het bericht meegestuurd. Hiermee kan de ontvanger door middel van het meegeleverd certificaat de handtekening controleren. Het certificaat dient uiteraard wel vertrouwd te zijn via een truststore configuratie waarin het PKIoverheid stamcertificaat alsmede de intermediair certificaten en Trusted Servicer Provider certificaten zijn opgenomen. Zie hiervoor [[PKIoverheid Certificaten]]. (een vereiste voor veel platformen om de validatie van het bericht aan te vangen).|
+||Overwegingen:<br>Het certificaat wordt in het bericht meegestuurd. Hiermee kan de ontvanger door middel van het meegeleverd certificaat de handtekening controleren. Het certificaat dient uiteraard wel vertrouwd te zijn via een truststore configuratie waarin het PKIoverheid stamcertificaat alsmede de intermediair certificaten en Trusted Servicer Provider certificaten zijn opgenomen. Zie hiervoor [[[Certificaten]]]. (een vereiste voor veel platformen om de validatie van het bericht aan te vangen).|
 |WB011|Het toepassen van End-to-End beveiliging wordt op serviceniveau aangeduid. Alle operaties en dus berichten (request en response) worden ontsloten volgens één bepaald Digikoppeling profiel.|
 ||Overwegingen:<br>Beveiligingseisen kunnen op het niveau van het bericht gedefinieerd worden, maar niet alle toolkits kunnen hiermee overweg. Totdat alle belangrijke toolkits dit wel kunnen, is het beter om bericht beveiliging op serviceniveau te definiëren.|
 |WB012|Voor het versleutelen van het responsebericht wordt het certificaat in het requestbericht gebruikt.|
@@ -693,7 +693,7 @@ Voor de drie profielen geldt dat deze zowel geoptimaliseerd (volgens de MTOM
 standaard) als niet geoptimaliseerd verstuurd kunnen worden. Hierom zijn voor
 elk profiel voorbeeldberichten beschikbaar in zowel de geoptimaliseerde (MTOM)
 als niet geoptimaliseerde vorm. Alle voorbeeldberichten zijn gebundeld in een
-set [WUS voorbeelden] en beschikbaar op de [[?Logius website]].
+set [[[?Voorbeelden]]] en beschikbaar op de [[[?Logius]]].
 
 Ten aanzien van beveiliging maken alle profielen gebruik van tweezijdig TLS, zie
 hoofdstuk 2 paragraaf “Point-to-Point beveiliging”.
@@ -702,7 +702,7 @@ hoofdstuk 2 paragraaf “Point-to-Point beveiliging”.
 
 In het bovenstaande figuur wordt schematisch weergegeven welke WUS profielen
 Digikoppeling biedt en wat de algemene verschillen zijn. Alle profielen worden
-in de volgende paragrafen in meer detail beschreven. In set [WUS voorbeelden]
+in de volgende paragrafen in meer detail beschreven. In set [[[?Voorbeelden]]]
 zijn voorbeeld berichten opgenomen voor de drie profielen. Deze bieden een
 duidelijk inzicht hoe de berichten uiteindelijk eruit komen te zien.
 
@@ -713,11 +713,10 @@ Dit profiel maakt voor de beveiliging alleen gebruik van tweezijdig TLS.
 
 ### Headerblocks
 Alleen de verplichte WS-Addressing headers zijn hier van toepassing (zie
-soapenv:Header in [[?WUS voorbeelden]]).
+soapenv:Header in [[[?Voorbeelden]]]).
 
 ### MTOM
-De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [WUS
-voorbeelden].
+De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [[[?Voorbeelden]]].
 
 ## WUS Profiel Digikoppeling 2W-be-S 
 
@@ -728,11 +727,11 @@ End-to-End beveiliging.
 
 ### Headerblocks
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
-(wsse:Security) headers van toepassing (zie [WUS voorbeelden]).
+(wsse:Security) headers van toepassing (zie [[[?Voorbeelden]]]).
 
 ### MTOM
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling 2W-be-S
-worden weergegeven in [WUS voorbeelden].
+worden weergegeven in [[[?Voorbeelden]]].
 
 ## WUS Profiel Digikoppeling 2W-be-SE
 
@@ -744,8 +743,8 @@ hoofdstuk 2, paragraaf End-to-End beveiliging.
 ### Headerblocks
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing. Ook wordt hierbij de payload van het
-bericht versleuteld (xenc:EncryptedData) (zie [WUS voorbeelden]).
+bericht versleuteld (xenc:EncryptedData) (zie [[[?Voorbeelden]]]).
 
 ### MTOM
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling
-2W-be-SE worden weergegeven in [WUS voorbeelden].
+2W-be-SE worden weergegeven in [[[?Voorbeelden]]].
