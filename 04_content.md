@@ -708,43 +708,61 @@ duidelijk inzicht hoe de berichten uiteindelijk eruit komen te zien.
 
 ## WUS Profiel Digikoppeling 2W-be
 
-### Beveiliging
+<dl>
+<dt>Beveiliging</dt>
+<dd>
 Dit profiel maakt voor de beveiliging alleen gebruik van tweezijdig TLS.
-
-### Headerblocks
+</dd>
+<dt>Headerblocks</dt>
+<dd>
 Alleen de verplichte WS-Addressing headers zijn hier van toepassing (zie
 soapenv:Header in [[[?Voorbeelden]]]).
-
-### MTOM
+</dd>
+<dt>MTOM</dt>
+<dd>
 De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [[[?Voorbeelden]]].
+</dd>
+</dl>
 
 ## WUS Profiel Digikoppeling 2W-be-S 
 
-### Beveiliging
+<dl>
+<dt>Beveiliging</dt>
+<dd>
 Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend zoals vermeld in hoofdstuk 2, paragraaf
 End-to-End beveiliging.
-
-### Headerblocks
+</dd>
+<dt>Headerblocks</dt>
+<dd>
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing (zie [[[?Voorbeelden]]]).
-
-### MTOM
+</dd>
+<dt>MTOM</dt>
+<dd>
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling 2W-be-S
 worden weergegeven in [[[?Voorbeelden]]].
+</dd>
+</dl>
 
 ## WUS Profiel Digikoppeling 2W-be-SE
 
-### Beveiliging
+<dl>
+<dt>Beveiliging</dt>
+<dd>
 Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend en versleuteld zoals vermeld in
 hoofdstuk 2, paragraaf End-to-End beveiliging.
-
-### Headerblocks
+</dd>
+<dt>Headerblocks</dt>
+<dd>
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing. Ook wordt hierbij de payload van het
 bericht versleuteld (xenc:EncryptedData) (zie [[[?Voorbeelden]]]).
-
-### MTOM
+</dd>
+<dt>MTOM</dt>
+<dd>
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling
 2W-be-SE worden weergegeven in [[[?Voorbeelden]]].
+</dd>
+</dl>
