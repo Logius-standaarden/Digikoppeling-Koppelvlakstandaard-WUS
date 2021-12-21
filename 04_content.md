@@ -170,12 +170,47 @@ De onderstaande tabel geeft in essentie de eigenschappen van de verschillende
 Digikoppeling profielen weer. Voor alle profielen wordt tweezijdig TLS gebruikt
 op transportniveau (HTTPS).
 
-| Profile Names | | | | | | |
-|---|---|---|---|---|---|---|
-| Digikoppeling WUS   | 2-zijdig TLS | Signed | Encrypted  | Attachments | | |
-| Best Effort | Digikoppeling 2W-be     | √ | ― | ― | Optional | |
-| End-to-End Security | Best Effort – Signed    | Digikoppeling 2W-be-S   | √ | √ | ― | Optional |
-| | Best Effort – Encrypted | Digikoppeling 2W-be-SE  | √ | √ | √ | Optional |
+<table>
+<thead>
+  <tr>
+    <td colspan="3">Profile Names</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="3">Digikoppeling WUS</td>
+    <td>2-zijdig TLS</td>
+    <td>Signed</td>
+    <td>Encrypted</td>
+    <td>Attachments</td>
+  </tr>
+  <tr>
+    <td colspan="2">Best Effort</td>
+    <td>Digikoppeling 2W-be</td>
+    <td>√</td>
+    <td>―</td>
+    <td>―</td>
+    <td>Optional</td>
+  </tr>
+  <tr>
+    <td rowspan="2">End-to-End Security</td>
+    <td>Best Effort – Signed</td>
+    <td>Digikoppeling 2W-be-S</td>
+    <td>√</td>
+    <td>√</td>
+    <td>―</td>
+    <td>Optional</td>
+  </tr>
+  <tr>
+    <td>Best Effort – Encrypted</td>
+    <td>Digikoppeling 2W-be-SE</td>
+    <td>√</td>
+    <td>√</td>
+    <td>√</td>
+    <td>Optional</td>
+  </tr>
+</tbody>
+</table>
 
 ## Compliancevoorzieningen
 
