@@ -21,7 +21,7 @@ providers als service requesters (clients).
 Digikoppeling is beschreven in een set van documenten. Deze set is als volgt
 opgebouwd:
 
-![Opbouw documentatie Digikoppeling](media/DK_Specificatie_structuur.png "Opbouw documentatie Digikoppeling")
+![Opbouw documentatie Digikoppeling](media/DK_Specificatie_structuur.svg "Opbouw documentatie Digikoppeling")
 
 Dit document beschrijft de WUS variant van de koppelvlakstandaarden. Naast de
 Koppelvlakstandaard WUS is er ook de ebMS2-standaard. Die wordt in een apart
@@ -174,6 +174,7 @@ op transportniveau (HTTPS).
 <thead>
   <tr>
     <td colspan="3">Profile Names</td>
+    <td colspan="4">Profile Names</td>
   </tr>
 </thead>
 <tbody>
