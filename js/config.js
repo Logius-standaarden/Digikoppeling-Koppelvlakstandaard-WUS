@@ -74,7 +74,6 @@ var respecConfig = {
   authors: [{
     name: "Logius",
     mailto: "digikoppeling@logius.nl",
-    url: "https://logius.nl/standaarden",
   }
   ],
   // The github option allows you associate your specification with a repository on GitHub.
@@ -171,68 +170,28 @@ var respecConfig = {
   // If you need to include a one-off reference that isn't in the SpecRef database or 
   // if you need to override an existing reference with specific content, then you can use this configuration option.
   localBiblio: {
-    NEN3610: {
-      href: "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
-      title:
-        "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
-      authors: [""],
-      date: "Maart 2011",
-      publisher: "Nederlands Normalisatie-instituut",
-    },
-    "Digikoppeling Architectuur": {
-      href: "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
-      title:
-        "Digikoppeling Architectuur",
-      authors: ["Logius Centrum voor standaarden"],
-      date: "december 2020",
-      publisher: "Logius",
-    },
-    UMMR10: {
-      href: "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
-      title: "UMM Revision 10",
-      authors: [""],
-      date: "2001",
-      publisher: "UN/CEFACT",
-    },
-    UMMUG: {
-      href: "www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
-      title: "UN/CEFACT Modeling Methodology (UMM) User Guide",
-      authors: [""],
-      date: "2003",
-      publisher: "UN/CEFACT",
-    },
-    "Digikoppeling Beveiligingsdocument": {
+    Beveiligingsdocument: {
       href: "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
       title: "Digikoppeling Beveiligingsstandaarden en voorschriften",
       date: "2020",
       publisher: "Logius",
     },
-    "PKI Policy": {
-      href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
-      title: "Programma van Eisen (PKIoverheid)",
-      publisher: "Logius",
-    },
-    "PKI CA": {
-      href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
-      title: "Toegetreden vertrouwensdienstverleners",
-      publisher: "Logius",
-    },
-    "PKIoverheid Certificaten": {
+    Certificaten: {
       href: "https://cert.pkioverheid.nl/",
-      title: "Pkioverheid certificaten",
+      title: "PkIoverheid certificaten",
       publisher: "Logius"
     },
-    "Logius website": {
+    Logius: {
       href: "https://logius.nl/digikoppeling",
       title: "Logius Digikoppeling",
       publisher: "Logius",
     },
-    "Digikoppeling Compliance Voorziening": {
+    Compliance: {
       href: "https://portaal.digikoppeling.nl",
       title: "Digikoppeling Compliance Voorziening",
       publisher: "Logius",
     },
-    "WUS voorbeelden": {
+    Voorbeelden: {
       href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
       title: "Digikoppeling WUS voorbeelden (zip)",
       publisher: "Logius",
