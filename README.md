@@ -1,3 +1,5 @@
+![build](https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS/actions/workflows/build.yml/badge.svg)
+
 # Digikoppeling Koppelvlakstandaard WUS
 
 - html: https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/
