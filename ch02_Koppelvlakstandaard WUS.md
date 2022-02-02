@@ -32,8 +32,8 @@ specifieke aandachtsgebieden.
 Deze standaard beschrijft per definitie aan welke eisen een Digikoppeling WUS
 implementatie moet voldoen. De praktijk leert dat dergelijke eisen vaak erg
 abstract zijn en dus gebaat zijn bij voorbeelden. Voorbeelden van berichten zijn
-gepubliceerd op de [[?Logius]]. Voorbeelden van WSDL’s zijn beschikbaar als
-onderdeel van de [[?Compliance]].
+gepubliceerd op [[?Logius]]. Voorbeelden van WSDL’s zijn beschikbaar als
+onderdeel van [[?Compliance]].
 
 ## Ondersteunde varianten 
 
@@ -139,7 +139,7 @@ De volgende interacties zijn beschikbaar:
 - Digikoppeling service provider: wordt gebruikt om een ontwikkelde service
     provider (service) te testen.
 
-De documenten over de compliancevoorzieningen zijn te vinden op de [[?Logius]]. De Digikoppeling Compliancevoorziening zelf is beschikbaar op
+De documenten over de compliancevoorzieningen zijn te vinden op [[?Logius]]. De Digikoppeling Compliancevoorziening zelf is beschikbaar op
 [[?Compliance]]
 
 ## Gehanteerde standaarden
