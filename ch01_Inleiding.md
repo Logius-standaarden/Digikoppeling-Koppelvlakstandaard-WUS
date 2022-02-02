@@ -41,6 +41,11 @@ opgebouwd:
 					<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/">DK Beveiligingsstandaarden en voorschriften</a>* </li>
 					<li>Koppelvlakstandaarden
 						<ul>
+							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/">DK Koppelvlakstandaard REST-API</a>*
+								<ul>
+									<li><i>Best-practice REST-API</i>† </li>
+								</ul>
+							</li>
 							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/wus/">DK Koppelvlakstandaard WUS</a>*
 								<ul>
 									<li><i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus">Best-practice WUS</a></i>† </li>
@@ -71,9 +76,9 @@ opgebouwd:
 </details>
 
 
-Dit document beschrijft de WUS variant van de koppelvlakstandaarden. Naast de
-Koppelvlakstandaard WUS is er ook de ebMS2-standaard. Die wordt in een apart
-document beschreven.
+Dit document beschrijft de WUS-variant van de koppelvlakstandaarden. Naast de
+Koppelvlakstandaard WUS zijn er ook de ebMS2- en REST-API-standaarden. Deze worden in een aparte
+documenten beschreven.
 
 ## Koppelvlak & koppelvlakstandaard
 
