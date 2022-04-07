@@ -158,10 +158,9 @@ var respecConfig = {
   // if you need to override an existing reference with specific content, then you can use this configuration option.
   localBiblio: {
     Beveiligingsdocument: {
-      href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/1.3/",
+      href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
       title: "Digikoppeling Beveiligingsstandaarden en voorschriften",
-      date: "2020",
-      publisher: "Logius",
+       publisher: "Logius",
     },
     Certificaten: {
       href: "https://cert.pkioverheid.nl/",
