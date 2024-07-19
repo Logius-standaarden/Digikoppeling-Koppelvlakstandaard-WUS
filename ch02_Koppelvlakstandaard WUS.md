@@ -14,7 +14,7 @@ de volgende onderwerpen relevant: WSDL met adressering en naamgeving,
 beveiliging, betrouwbaarheid, binaire data, resulterende berichtheaders,
 profielen van Digikoppeling en compliancevoorzieningen. Deze standaard wordt
 verder aangevuld met “Best Practices” en adviezen, beschreven in een apart
-document. Alle documentatie over Digikoppeling is te vinden op [[?Logius]].
+document. Alle documentatie over Digikoppeling is te vinden op [[[?DK]]].
 
 ### WSDL
 
@@ -32,8 +32,8 @@ specifieke aandachtsgebieden.
 Deze standaard beschrijft per definitie aan welke eisen een Digikoppeling WUS
 implementatie moet voldoen. De praktijk leert dat dergelijke eisen vaak erg
 abstract zijn en dus gebaat zijn bij voorbeelden. Voorbeelden van berichten zijn
-gepubliceerd op [[?Logius]]. Voorbeelden van WSDL’s zijn beschikbaar als
-onderdeel van [[?Compliance]].
+gepubliceerd op [[[?DK]]]. Voorbeelden van WSDL’s zijn beschikbaar als
+onderdeel van [[[?DK-CV]]].
 
 ## Ondersteunde varianten 
 
@@ -129,7 +129,7 @@ Voor de Digikoppeling Koppelvlakstandaard WUS is een compliancevoorzieningen
 beschikbaar gesteld, waarmee een ontwikkelaar of beheerder kan testen “of het
 berichtenverkeer werkt”. Deze compliancevoorziening is gedefinieerd aan de hand
 van de WSDL’s die opvraagbaar zijn op
-[[?Compliance]].
+[[[?DK-CV]]].
 
 De volgende interacties zijn beschikbaar:
 
@@ -139,8 +139,8 @@ De volgende interacties zijn beschikbaar:
 - Digikoppeling service provider: wordt gebruikt om een ontwikkelde service
     provider (service) te testen.
 
-De documenten over de compliancevoorzieningen zijn te vinden op [[?Logius]]. De Digikoppeling Compliancevoorziening zelf is beschikbaar op
-[[?Compliance]]
+De documenten over de compliancevoorzieningen zijn te vinden op [[[?DK]]]. De Digikoppeling Compliancevoorziening zelf is beschikbaar op
+[[[?DK-CV]]]
 
 ## Gehanteerde standaarden
 
@@ -158,7 +158,7 @@ zeggen interoperabel geïmplementeerd zijn in het grootste deel van de
 drafts. Digikoppeling kiest daarom voor WS-I Standaarden met status final.
 
 De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden
-beschreven in het [[Beveiligingsdocument]].
+beschreven in [[[DK-Beveiliging]]].
 
 Resulterende beslissingen ten aanzien van standaarden:
 
@@ -167,7 +167,7 @@ Resulterende beslissingen ten aanzien van standaarden:
 
 - WS-I BSP 1.1 voor berichtbeveiliging op basis van WS-Security.
 
-- De TLS versies zoals beschreven in [[Beveiligingsdocument]],
+- De TLS versies zoals beschreven in [[[DK-Beveiliging]]],
     conform de aanbevelingen in WS-I BSP 1.0 voor beveiliging op
     transport/kanaal niveau en aanbevelingen van NIST en NCSC.
 
@@ -185,7 +185,7 @@ van standaarden:
 | XML 1.0 (Second Edition) | WS-I Basic Profile 1.2 |
 | XML Schema Part 1: Structures | WS-I Basic Profile 1.2 |
 | XML Schema Part 2: Data types | WS-I Basic Profile 1.2 |
-| De huidig toegestane TLS versies zoals beschreven in [[Beveiligingsdocument]] | WS-I Basic Profile 1.2,  NCSC, NIST, ENISA |
+| De huidig toegestane TLS versies zoals beschreven in [[[DK-Beveiliging]]] | WS-I Basic Profile 1.2,  NCSC, NIST, ENISA |
 | HTTP over TLS Transport Layer Security (RFC2818) | WS-I Basic Profile 1.2 |
 | Internet X.509 Public Key Infrastructure Certificate and CRL Profile (RFC 3280) | PKI overheid 1.1 |
 | WS-Addressing 1.0 [[ws-addr-metadata]]| WS-I Basic Profile1.2 |
@@ -499,11 +499,11 @@ voorschriften:
 
 | Nr    | Omschrijving |
 |---|---|
-| WT001 | Authenticatie op transportniveau gebeurt op basis TLS met tweezijdige authenticatie. De huidige toegestane protocolversies zijn beschreven in het [[Beveiligingsdocument]]. Client and Server authenticatie is vereist gebruikmakend van HTTPS en alle in [[Beveiligingsdocument]] genoemde TLS versies. De TLS implementatie mag niet op een oudere TLS of SSL versie terug kunnen vallen. |
-| | Meer informatie in het [[Beveiligingsdocument]] |
+| WT001 | Authenticatie op transportniveau gebeurt op basis TLS met tweezijdige authenticatie. De huidige toegestane protocolversies zijn beschreven in [[[DK-Beveiliging]]]. Client and Server authenticatie is vereist gebruikmakend van HTTPS en alle in [[[DK-Beveiliging]]] genoemde TLS versies. De TLS implementatie mag niet op een oudere TLS of SSL versie terug kunnen vallen. |
+| | Meer informatie in [[[DK-Beveiliging]]] |
 | WT002 | De te gebruiken certificaten in de productie omgeving voldoen aan de eisen van PKIoverheid (PvE 3b) en de inhoud van de identificerende velden in het certificaat dienen te voldoen aan de afspraken als gesteld in de functionele eisen Authenticatie Digikoppeling. Met het toepassen van PKIoverheid-certificaten die Digikoppeling compliant zijn, wordt hieraan voldaan. |
-| WT003 | De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden beschreven in het [[Beveiligingsdocument]] |
-| | Meer informatie in het [[Beveiligingsdocument]] |
+| WT003 | De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden beschreven in het [[[DK-Beveiliging]]] |
+| | Meer informatie in [[[DK-Beveiliging]]] |
 | WT004 | De geldigheid van het certificaat wordt getoetst met betrekking tot de geldigheidsdatum en de Certificate Revocation List(CRL) die voldoet aan de eisen van PKIoverheid. |
 | WT005 | De betreffende CRL dient zowel voor de versturende als ontvangende partij te benaderen zijn. |
 | WT006 | Voor communicatie over HTTPS wordt port 443 gebruikt. |
@@ -555,11 +555,11 @@ onweerlegbaarheid van belang is.
                         </tr>
                         <tr>
                             <td>Data Encryption Algorithms</td>
-                            <td>zie [[Beveiligingsdocument]]
+                            <td>zie [[[DK-Beveiliging]]]
                         </tr>
                         <tr>
                             <td>Key Transport Algorithms</td>
-                            <td>zie [[Beveiligingsdocument]]
+                            <td>zie [[[DK-Beveiliging]]]
                     </tbody>
                 </table>
             </td>
@@ -577,11 +577,11 @@ onweerlegbaarheid van belang is.
                     <tbody>
                         <tr>
                             <td>Data Encryption Algorithms</td>
-                            <td>zie [[Beveiligingsdocument]]
+                            <td>zie [[[DK-Beveiliging]]]
                         </tr>
                         <tr>
                             <td>Key Transport Algorithms</td>
-                            <td>zie [[Beveiligingsdocument]]
+                            <td>zie [[[DK-Beveiliging]]]
                     </tbody>
                 </table>
             </td>
@@ -593,7 +593,7 @@ onweerlegbaarheid van belang is.
 |---|---|
 |WB009|Security token X.509 Certificate Token (PKI Overheid Digikoppeling certificaat).|
 |WB010|Publieke sleutel welke gebruikt is voor het signing proces dient meegeleverd te worden met het bericht via een ‘Direct security token’ reference.|
-||Overwegingen:<br>Het certificaat wordt in het bericht meegestuurd. Hiermee kan de ontvanger door middel van het meegeleverd certificaat de handtekening controleren. Het certificaat dient uiteraard wel vertrouwd te zijn via een truststore configuratie waarin het PKIoverheid stamcertificaat alsmede de intermediair certificaten en Trusted Servicer Provider certificaten zijn opgenomen. Zie hiervoor [[Certificaten]]. (een vereiste voor veel platformen om de validatie van het bericht aan te vangen).|
+||Overwegingen:<br>Het certificaat wordt in het bericht meegestuurd. Hiermee kan de ontvanger door middel van het meegeleverd certificaat de handtekening controleren. Het certificaat dient uiteraard wel vertrouwd te zijn via een truststore configuratie waarin het PKIoverheid stamcertificaat alsmede de intermediair certificaten en Trusted Servicer Provider certificaten zijn opgenomen. Zie hiervoor [[[PKIO-Cert]]]. (een vereiste voor veel platformen om de validatie van het bericht aan te vangen).|
 |WB011|Het toepassen van End-to-End beveiliging wordt op serviceniveau aangeduid. Alle operaties en dus berichten (request en response) worden ontsloten volgens één bepaald Digikoppeling profiel.|
 ||Overwegingen:<br>Beveiligingseisen kunnen op het niveau van het bericht gedefinieerd worden, maar niet alle toolkits kunnen hiermee overweg. Totdat alle belangrijke toolkits dit wel kunnen, is het beter om bericht beveiliging op serviceniveau te definiëren.|
 |WB012|Voor het versleutelen van het responsebericht wordt het certificaat in het requestbericht gebruikt.|
