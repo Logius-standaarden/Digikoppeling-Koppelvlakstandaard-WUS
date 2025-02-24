@@ -14,16 +14,16 @@ Voor de drie profielen geldt dat deze zowel geoptimaliseerd (volgens de MTOM
 standaard) als niet geoptimaliseerd verstuurd kunnen worden. Hierom zijn voor
 elk profiel voorbeeldberichten beschikbaar in zowel de geoptimaliseerde (MTOM)
 als niet geoptimaliseerde vorm. Alle voorbeeldberichten zijn gebundeld in een
-set [[[?Voorbeelden]]] en beschikbaar op de [[[?Logius]]].
+[[[?DK-WUS-voorbeeld]]] en beschikbaar op [[[?DK]]].
 
 Ten aanzien van beveiliging maken alle profielen gebruik van tweezijdig TLS, zie
-hoofdstuk 2 paragraaf “Point-to-Point beveiliging”.
+[[[#point-to-point-beveiliging]]].
 
 ![Digikoppeling WUS profielen bevinden zich in de logistieke laag dat via een SOAP processor verbonden is met de applicatielaag.](media/wus_profielen_digikoppeling.png "Schematische weergave Digikoppeling WUS profielen")
 
 In het bovenstaande figuur wordt schematisch weergegeven welke WUS profielen
 Digikoppeling biedt en wat de algemene verschillen zijn. Alle profielen worden
-in de volgende paragrafen in meer detail beschreven. In set [[[?Voorbeelden]]]
+in de volgende paragrafen in meer detail beschreven. In [[[?DK-WUS-voorbeeld]]]
 zijn voorbeeld berichten opgenomen voor de drie profielen. Deze bieden een
 duidelijk inzicht hoe de berichten uiteindelijk eruit komen te zien.
 
@@ -37,11 +37,11 @@ Dit profiel maakt voor de beveiliging alleen gebruik van tweezijdig TLS.
 <dt>Headerblocks</dt>
 <dd>
 Alleen de verplichte WS-Addressing headers zijn hier van toepassing (zie
-soapenv:Header in [[[?Voorbeelden]]]).
+soapenv:Header in [[[?DK-WUS-voorbeeld]]]).
 </dd>
 <dt>MTOM</dt>
 <dd>
-De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [[[?Voorbeelden]]].
+De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [[[?DK-WUS-voorbeeld]]].
 </dd>
 </dl>
 
@@ -51,18 +51,17 @@ De geoptimaliseerde (MTOM) voorbeeldberichten worden weergegeven in [[[?Voorbeel
 <dt>Beveiliging</dt>
 <dd>
 Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
-worden de berichtonderdelen ondertekend zoals vermeld in hoofdstuk 2, paragraaf
-End-to-End beveiliging.
+worden de berichtonderdelen ondertekend zoals vermeld in [[[#end-to-end-beveiliging]]].
 </dd>
 <dt>Headerblocks</dt>
 <dd>
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
-(wsse:Security) headers van toepassing (zie [[[?Voorbeelden]]]).
+(wsse:Security) headers van toepassing (zie [[[?DK-WUS-voorbeeld]]]).
 </dd>
 <dt>MTOM</dt>
 <dd>
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling 2W-be-S
-worden weergegeven in [[[?Voorbeelden]]].
+worden weergegeven in [[[?DK-WUS-voorbeeld]]].
 </dd>
 </dl>
 
@@ -73,17 +72,17 @@ worden weergegeven in [[[?Voorbeelden]]].
 <dd>
 Dit profiel maakt voor de beveiliging gebruik van tweezijdig TLS en tevens
 worden de berichtonderdelen ondertekend en versleuteld zoals vermeld in
-hoofdstuk 2, paragraaf End-to-End beveiliging.
+[[[#end-to-end-beveiliging]]].
 </dd>
 <dt>Headerblocks</dt>
 <dd>
 In dit profiel zijn de WS-Addressing en WS-Security 1.0 ondertekening
 (wsse:Security) headers van toepassing. Ook wordt hierbij de payload van het
-bericht versleuteld (xenc:EncryptedData) (zie [[[?Voorbeelden]]]).
+bericht versleuteld (xenc:EncryptedData) (zie [[[?DK-WUS-voorbeeld]]]).
 </dd>
 <dt>MTOM</dt>
 <dd>
 De geoptimaliseerde (MTOM) voorbeeldberichten voor profiel Digikoppeling
-2W-be-SE worden weergegeven in [[[?Voorbeelden]]].
+2W-be-SE worden weergegeven in [[[?DK-WUS-voorbeeld]]].
 </dd>
 </dl>
