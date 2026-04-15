@@ -2,17 +2,20 @@ import { loadRespecWithConfiguration } from "https://logius-standaarden.github.i
 
 loadRespecWithConfiguration({
   authors: [ { 
-        "mailto" : "digikoppeling@logius.nl",
-        "name" : "Logius"
+        "name" : "Peter Haasnoot",
+        "company" : "Logius",
+        "url" : "https://www.logius.nl"
       } ],
   editors: [ 
       { 
         "name" : "Peter Haasnoot",
-        "url" : "https://logius.nl/standaarden"
+        "company" : "Logius",
+        "url" : "https://www.logius.nl"
       },
       { 
         "name" : "Pieter Hering",
-        "url" : "https://logius.nl/standaarden"
+        "company" : "Logius",
+        "url" : "https://www.logius.nl"
       }
     ],
   github: "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-WUS",
